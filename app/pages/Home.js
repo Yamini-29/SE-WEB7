@@ -18,7 +18,7 @@ export default function Layout({ pageTitle, children }) {
             <Head>
                 <title>{titleConcat}</title>
             </Head>
-            <div className="min-h-screen ">
+            <div className="min-h-screen bg-black">
                 <div className="flex">
                    
                 <Sidebar show={showSidebar} setter={setShowSidebar} />

@@ -4,7 +4,7 @@ import KalamkariSimulator from "./simulators/kalamkari";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+    <div className="bg-black min-h-screen  flex flex-col items-center justify-center">
 
     <Home/>
     </div>
