@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'; // Import usePathname
+import { usePathname } from 'next/navigation'; 
 
 import { SlHome } from 'react-icons/sl';
 import { BsInfoSquare, BsEnvelopeAt } from 'react-icons/bs';
@@ -45,7 +45,7 @@ export default function Sidebar({ show, setter }) {
                 <div className="flex flex-col">
                     <MenuItem name="Home" route="/" icon={<SlHome />} />
                     <MenuItem name="Create" route="/t-shirts" icon={<FaTshirt />} />
-                    <MenuItem name="Tutorials" route="/hats" icon={<FaRedhat />} />
+                    <MenuItem name="Tutorials" route="/tutorials" icon={<FaRedhat />} />
                     <MenuItem name="Community" route="/about" icon={<BsInfoSquare />} />
                     <MenuItem name="Myfiles" route="/contact" icon={<BsEnvelopeAt />} />
                 </div>
