@@ -6,11 +6,9 @@ import Sidebar from '../components/Sidebar';
 
 
 export default function Layout({ pageTitle, children }) {
-    // Concatenate page title (if exists) to site title
     let titleConcat = "Responsive Sidebar Example";
     if (pageTitle) titleConcat = pageTitle + " | " + titleConcat;
 
-    // Mobile sidebar visibility state
     const [showSidebar, setShowSidebar] = useState(false);
 
     return (
@@ -18,6 +16,7 @@ export default function Layout({ pageTitle, children }) {
             <Head>
                 <title>{titleConcat}</title>
             </Head>
+            <div className="min-h-screen">
             <div className="min-h-screen bg-black">
                 <div className="flex">
                    
