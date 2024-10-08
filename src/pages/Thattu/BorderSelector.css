@@ -1,23 +1,21 @@
-/* Sidebar container */
 .border-selector {
-  width: 320px; /* Increased the width */
+  width: 320px;
   padding: 20px;
   background-color: #f0f0f0;
   border-radius: 8px;
-  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow for a better look */
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3); 
   overflow-y: auto;
-  height: 100vh; /* Full height to fit the window */
-  position: fixed; /* Fix the sidebar to the left side of the window */
+  height: 100vh; 
+  position: fixed; 
   top: 0;
   left: 0;
-  z-index: 1000; /* Ensure it stays on top of other elements */
+  z-index: 1000; 
 }
 
-/* Border options styling */
 .border-options {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Increased gap for better spacing */
+  gap: 15px; 
 }
 
 .border-option {
@@ -29,14 +27,13 @@
 }
 
 .border-option:hover {
-  border: 2px solid #4a90e2; /* Highlight on hover */
+  border: 2px solid #4a90e2; 
 }
 
-/* Additional global styles to make the canvas fit next to the sidebar */
 .canvas-container {
-  margin-left: 340px; /* Make room for the sidebar */
+  margin-left: 340px; 
   padding: 20px;
-  width: calc(100% - 340px); /* Adjust the canvas width dynamically based on sidebar width */
+  width: calc(100% - 340px); 
   display: flex;
   flex-direction: column;
   align-items: center;
