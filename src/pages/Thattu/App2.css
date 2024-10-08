@@ -1,0 +1,117 @@
+.App2 {
+  text-align: center;
+}
+
+.App2-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App2-logo {
+    animation: App2-logo-spin infinite 20s linear;
+  }
+}
+
+.App2-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App2-link {
+  color: #61dafb;
+}
+
+@keyframes App2-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* styles/App2.css */
+
+.map-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh;
+  width: 100vw; 
+}
+
+svg {
+  width: 90vw; 
+  height: auto; 
+  max-width: 100px;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #e0e0e0;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.main-content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.save-button, .view-3d-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.save-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.view-3d-button {
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}

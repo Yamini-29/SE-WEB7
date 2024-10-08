@@ -1,0 +1,50 @@
+.border-selector {
+  width: 320px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3); 
+  overflow-y: auto;
+  height: 100vh; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1000; 
+}
+
+.border-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+
+.border-option {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.border-option:hover {
+  border: 2px solid #4a90e2; 
+}
+
+.canvas-container {
+  margin-left: 340px; 
+  padding: 20px;
+  width: calc(100% - 340px); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+}
+
+.h2selector {
+  color: black;
+  font-size: 28px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  margin-bottom: 30px; 
+}
