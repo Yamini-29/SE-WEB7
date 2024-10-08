@@ -20,7 +20,7 @@ export default function HomePage() {
     <div className="homepage flex flex-col min-h-screen relative"> {/* Added relative positioning */}
       {/* Sidebar */}
       <div className="w-64">
-        <SidebarWithBurgerMenu />
+
       </div>
 
       {/* Top Header with Title and Button */}

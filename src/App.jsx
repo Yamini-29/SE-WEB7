@@ -15,10 +15,12 @@ import Thattu3DView from './Simulators/Thattu/Thattu3DView'
 import KalamkariSimulations from './Simulators/Kalamkari/KalamkariSimulations'
 import Designs from './Simulators/Kalamkari/Designs'
 import KalamkariSimulator from './Simulators/Kalamkari/KalamkariSimulator'
+import { SidebarWithBurgerMenu } from './components/Sidebar';
 
 const App = () => {
   return (
 <div>
+  <SidebarWithBurgerMenu/>
   <Routes>
         {/* Home Page */}
         <Route path='/' element={<HomePage />} />
