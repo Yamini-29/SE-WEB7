@@ -1,15 +1,13 @@
-/* Adjusting styles for improved appearance */
-
 .canvas-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   margin-left: 20px;
-  width: calc(100% - 320px); /* Reduced width to accommodate sidebar */
-  margin-left: 320px; /* Shifted to make space for the sidebar */
-  height: 100vh; /* Ensure the canvas container takes full height */
-  padding-top: 40px; /* Added padding to increase the gap between text and the circle */
+  width: calc(100% - 320px); 
+  margin-left: 320px; 
+  height: 100vh; 
+  padding-top: 40px; 
 }
 
 .h2 {
@@ -17,7 +15,7 @@
   font-size: 28px;
   font-family: 'Arial', sans-serif;
   font-weight: bold;
-  margin-bottom: 30px; /* Increased margin between text and canvas */
+  margin-bottom: 30px; 
 }
 
 .canvas {
@@ -31,7 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow for better UI */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); 
 }
 
 .canvas-border {
@@ -42,35 +40,33 @@
   left: 0;
 }
 
-/* Sidebar style adjustments */
 .sidebar {
-  width: 320px; /* Increased the width of the sidebar */
-  height: 100vh; /* Full height to fit the window */
+  width: 320px; 
+  height: 100vh; 
   padding: 20px;
-  background-color: #2C2C2C; /* Darker background for sidebar */
-  overflow-y: auto; /* Make it scrollable if content overflows */
+  background-color: #2C2C2C;
+  overflow-y: auto; 
   position: fixed;
   left: 0;
   top: 0;
-  box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.3); /* Added shadow for sidebar */
+  box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.3); 
 }
 
 .sidebar img {
   width: 100%;
-  margin-bottom: 20px; /* Add some space between the images */
+  margin-bottom: 20px; 
 }
 
 .button-group {
   display: flex;
-  gap: 20px; /* Increased gap between buttons */
+  gap: 20px; 
   justify-content: center;
   margin-top: 30px;
 }
 
-/* Button styles for "Save Image" */
 .save-button {
   padding: 15px 30px;
-  background-color: #f1c40f; /* Yellow before hover */
+  background-color: #f1c40f;
   color: white;
   border: none;
   cursor: pointer;
@@ -82,13 +78,12 @@
 }
 
 .save-button:hover {
-  background-color: #2ecc71; /* Green after hover */
+  background-color: #2ecc71; 
 }
 
-/* Button styles for "View in 3D" (can keep it different or same) */
 .view-3d-button {
   padding: 15px 30px;
-  background-color: #3498db; /* Blue for "View in 3D" */
+  background-color: #3498db; 
   color: white;
   border: none;
   cursor: pointer;
@@ -100,14 +95,13 @@
 }
 
 .view-3d-button:hover {
-  background-color: #2980b9; /* Darker blue on hover */
+  background-color: #2980b9; 
 }
 
-/* Additional improvements */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #1A1A1A; /* Darker background to match the sidebar */
+  background-color: #1A1A1A; 
   color: white;
 }
