@@ -17,10 +17,14 @@ export default function HomePage() {
       </div>
 
       {/* Spline animation */}
-      <div className="spline-container flex-1 flex justify-center items-center relative">
-        <spline-viewer url="https://prod.spline.design/9lr5Y63JHDn85s1D/scene.splinecode"></spline-viewer>
+      <div className="spline-container flex-1 flex ml-80 py-20 justify-center items-center relative">
+        <div> {/* This div will hold the spline viewer */}
+          <spline-viewer 
+            url="https://prod.spline.design/9lr5Y63JHDn85s1D/scene.splinecode"
+            
+          ></spline-viewer>
+        </div>
       </div>
-
       {/* BestSeller component mounted below the Spline animations */}
       <div className=" p-6 ">
         <BestSellerPage />

@@ -1,37 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Typography,
   List,
   ListItem,
   ListItemPrefix,
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
-  Input,
   Card,
 } from "@material-tailwind/react";
 import {
-  PresentationChartBarIcon,
-  ShoppingBagIcon,
   UserCircleIcon,
   Cog6ToothIcon,
   InboxIcon,
   PowerIcon,
-} from "@heroicons/react/24/solid";
-import {
-  ChevronRightIcon,
-  ChevronDownIcon,
   CubeTransparentIcon,
-  MagnifyingGlassIcon,
-} from "@heroicons/react/24/outline";
+  ChatBubbleOvalLeftEllipsisIcon,
+} from "@heroicons/react/24/solid";
 
 export function SidebarWithBurgerMenu() {
-  const [open, setOpen] = React.useState(0);
-
-  const handleOpen = (value) => {
-    setOpen(open === value ? 0 : value);
-  };
-
   return (
     <div className="fixed inset-y-0 left-0 w-64 z-50 bg-black p-4 shadow-lg">
       <Card
@@ -49,120 +34,54 @@ export function SidebarWithBurgerMenu() {
             Sidebar
           </Typography>
         </div>
-     
+
         <List>
-          <Accordion
-            open={open === 1}
-            icon={
-              <ChevronDownIcon
-                strokeWidth={2.5}
-                className={`mx-auto h-4 w-4 transition-transform ${
-                  open === 1 ? "rotate-180" : ""
-                }`}
-              />
-            }
-          >
-            <ListItem className="p-0" selected={open === 1}>
-              <AccordionHeader
-                onClick={() => handleOpen(1)}
-                className="border-b-0 p-3"
-              >
-                <ListItemPrefix>
-                  <PresentationChartBarIcon className="h-5 w-5" />
-                </ListItemPrefix>
-                <Typography color="blue-gray" className="mr-auto font-normal">
-                  Dashboard
-                </Typography>
-              </AccordionHeader>
-            </ListItem>
-            <AccordionBody className="py-1">
-              <List className="p-0">
-                <ListItem>
-                  <ListItemPrefix>
-                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                  </ListItemPrefix>
-                  Analytics
-                </ListItem>
-                <ListItem>
-                  <ListItemPrefix>
-                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                  </ListItemPrefix>
-                  Reporting
-                </ListItem>
-                <ListItem>
-                  <ListItemPrefix>
-                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                  </ListItemPrefix>
-                  Projects
-                </ListItem>
-              </List>
-            </AccordionBody>
-          </Accordion>
-          <Accordion
-            open={open === 2}
-            icon={
-              <ChevronDownIcon
-                strokeWidth={2.5}
-                className={`mx-auto h-4 w-4 transition-transform ${
-                  open === 2 ? "rotate-180" : ""
-                }`}
-              />
-            }
-          >
-            <ListItem className="p-0" selected={open === 2}>
-              <AccordionHeader
-                onClick={() => handleOpen(2)}
-                className="border-b-0 p-3"
-              >
-                <ListItemPrefix>
-                  <ShoppingBagIcon className="h-5 w-5" />
-                </ListItemPrefix>
-                <Typography color="blue-gray" className="mr-auto font-normal">
-                  E-Commerce
-                </Typography>
-              </AccordionHeader>
-            </ListItem>
-            <AccordionBody className="py-1">
-              <List className="p-0">
-                <ListItem>
-                  <ListItemPrefix>
-                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                  </ListItemPrefix>
-                  Orders
-                </ListItem>
-                <ListItem>
-                  <ListItemPrefix>
-                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                  </ListItemPrefix>
-                  Products
-                </ListItem>
-              </List>
-            </AccordionBody>
-          </Accordion>
-          <hr className="my-2 border-blue-gray-50" />
+          {/* Simulate */}
           <ListItem>
             <ListItemPrefix>
-              <InboxIcon className="h-5 w-5" />
+              <CubeTransparentIcon className="h-5 w-5" />
             </ListItemPrefix>
-            Inbox
+            <Link to="/simulate" className="text-gray-100">Simulate</Link>
           </ListItem>
+
+          {/* Quiz */}
           <ListItem>
             <ListItemPrefix>
-              <UserCircleIcon className="h-5 w-5" />
+              <InboxIcon className="h-5 w-5 text-white" />
             </ListItemPrefix>
-            Profile
+            <Link to="/mainquiz" className="text-gray-100">Quiz</Link>
           </ListItem>
+
+          {/* Community */}
+          <ListItem>
+            <ListItemPrefix>
+              <ChatBubbleOvalLeftEllipsisIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            <Link to="/community" className="text-gray-100">Community</Link>
+          </ListItem>
+
+          {/* Settings */}
           <ListItem>
             <ListItemPrefix>
               <Cog6ToothIcon className="h-5 w-5" />
             </ListItemPrefix>
-            Settings
+            <Link to="/settings" className="text-gray-100">Settings</Link>
           </ListItem>
+
+          {/* Profile */}
+          <ListItem>
+            <ListItemPrefix>
+              <UserCircleIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            <Link to="/profile" className="text-gray-100">Profile</Link>
+          </ListItem>
+
+          {/* Logout */}
           <ListItem>
             <ListItemPrefix>
               <PowerIcon className="h-5 w-5" />
             </ListItemPrefix>
-            Log Out
+            <Link to="/logout" className="text-gray-100">Log Out</Link>
           </ListItem>
         </List>
       </Card>
