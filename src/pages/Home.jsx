@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { SidebarWithBurgerMenu } from '../components/Sidebar';
+import BestSellerPage from '../components/BestSeller';
 
 export default function HomePage() {
   useEffect(() => {
@@ -9,15 +11,21 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="homepage">
-      {/* Other content */}
+    <div className="homepage flex flex-col min-h-screen">
+      {/* Sidebar */}
+      <div className="w-64">
+        <SidebarWithBurgerMenu />
+      </div>
 
       {/* Spline animation */}
-      <div className="spline-container w-full h-screen flex justify-center items-center">
+      <div className="spline-container flex-1 flex justify-center items-center relative">
         <spline-viewer url="https://prod.spline.design/VFy7QYAkmOquv6SV/scene.splinecode"></spline-viewer>
       </div>
 
-      {/* Other content */}
+      {/* BestSeller component mounted below the Spline animations */}
+      <div className=" p-6 ">
+        <BestSellerPage />
+      </div>
     </div>
   );
 }
