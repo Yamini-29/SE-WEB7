@@ -1,12 +1,10 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './pages/Home'
-import BestSeller from './components/BestSeller'
-import Quiz from './pages/quiz'
-import MainQuizPage from './pages/MainQuiz'
-import Simulations from './pages/Simulations'
-import Border from './pages/Border'
-import Simulator from './pages/Simulator'
+
+import Simulations from './Simulators/kalamkari/KalamkariSimulations'
+import Border from './Simulators/kalamkari/Designs'
+import Simulator from './Simulators/kalamkari/KalamkariSimulator'
 
 
 

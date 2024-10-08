@@ -1,13 +1,25 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import html2canvas from "html2canvas";
-import border1 from '../assets/border1.png';
-import border2 from '../assets/border2.png';
+import d1 from '../../assets/1.png';
+import d2 from '../../assets/2.png';
+import d3 from '../../assets/3.png';
+import d4 from '../../assets/4.png';
+import d5 from '../../assets/5.png';
+import d6 from '../../assets/6.png';
+import d7 from '../../assets/7.png';
+import d8 from '../../assets/8.png';
+import d9 from '../../assets/9.png';
+import d10 from '../../assets/10.png';
 
 const borderImages = [
-    { src: border1, alt: "Border 1" },
-    { src: border2, alt: "Border 2" },
-    { src: "https://via.placeholder.com/150?text=Border+3", alt: "Border 3" },
+    { src: d1, alt: "Border 1" },
+    { src: d2, alt: "Border 2" },
+    { src: d3, alt: "Border 3" },
+    { src: d4, alt: "Border 4" },
+    { src: d5, alt: "Border 5" },
+    { src: d6, alt: "Border 6" },
+    { src: "https://via.placeholder.com/150?text=Border+3", alt: "Border last" },
 ];
 
 const Border = () => {
