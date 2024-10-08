@@ -1,138 +1,101 @@
-import React, { useEffect } from 'react'
-import { useContext } from 'react'
-import { ShopContext } from '../context/ShopContext'
-import { useState } from 'react';
-import { assets } from '../assets/assets';
-import Title from '../components/Title';
+import React, { useEffect, useContext, useState } from 'react';
+import { ShopContext } from '../context/ShopContext';
 import ProductsItem from '../components/ProductsItem';
+import VideoGallery from '../components/VideoGallery'; // Ensure correct path
+import { Link } from 'react-router-dom';
+import { ArrowRightIcon } from '@heroicons/react/24/outline'; // Ensure correct path
+import { SidebarWithBurgerMenu } from '../components/Sidebar';
 
 const Collection = () => {
     const { products } = useContext(ShopContext);
-    const [showFilter, setShowFilter] = useState(false);
-    const [filterProducts, setFilterProducts] = useState([]);
+    const [filterProducts, setFilterProducts] = useState(products);
     const [category, setCategory] = useState([]);
     const [subCategory, setSubCategory] = useState([]);
-    const [sortType, setSortType] = useState('relavent')
-    {/*  dddddddd */ }
-    const togglecategory = (e) => {
-        if (category.includes(e.target.value)) {
-            setCategory(prev => prev.filter(item => item !== e.target.value))
-        }
-        else {
-            setCategory(prev => [...prev, e.target.value])
-        }
-    }
+    const [sortType, setSortType] = useState('relevant');
+    const [loading, setLoading] = useState(false);
+
+    // Toggle Category Selection
+    const toggleCategory = (e) => {
+        const value = e.target.value;
+        setCategory((prev) =>
+            prev.includes(value) ? prev.filter(item => item !== value) : [...prev, value]
+        );
+    };
+
+    // Toggle Subcategory Selection
     const toggleSubcategory = (e) => {
-        if (subCategory.includes(e.target.value)) {
-            setSubCategory(prev => prev.filter(item => item !== e.target.value))
-        }
-        else {
-            setSubCategory(prev => [...prev, e.target.value])
-        }
-    }
+        const value = e.target.value;
+        setSubCategory((prev) =>
+            prev.includes(value) ? prev.filter(item => item !== value) : [...prev, value]
+        );
+    };
 
+    // Apply Filters
     const applyFilter = () => {
-        let productsCopy = products.slice();
-        if (category.length > 0) {
-            productsCopy = productsCopy.filter(item => category.includes(item.category));
-        }
-        if (subCategory.length > 0) {
-            productsCopy = productsCopy.filter(item => subCategory.includes(item.subCategory));
-        }
-        setFilterProducts(productsCopy)
-    }
-    const sortProduct = () => {
-        let fpCopy = filterProducts.slice();
-        switch (sortType) {
-            case 'low-high':
-                setFilterProducts(fpCopy.sort((a, b) => (a.price - b.price)));
-                break;
-            case 'high-low':
-                setFilterProducts(fpCopy.sort((a, b) => (b.price - a.price)));
-                break;
-            default:
-                applyFilter();
-                break;
-        }
-    }
+        setLoading(true);
+        setTimeout(() => { // Simulate loading
+            let filtered = products.slice();
+            if (category.length > 0) filtered = filtered.filter(item => category.includes(item.category));
+            if (subCategory.length > 0) filtered = filtered.filter(item => subCategory.includes(item.subCategory));
+            setFilterProducts(filtered);
+            setLoading(false);
+        }, 500); // Simulating a delay
+    };
 
-
-
+    // Apply Filters When Category, Subcategory, or Products Change
     useEffect(() => {
         applyFilter();
-    }, [category, subCategory]);
-
-    useEffect(() => {
-        sortProduct();
-    }, [sortType, filterProducts]);
-
-
+    }, [category, subCategory, products]);
 
     return (
-        <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 boeder-t'>
-            {/*filter option*/}
-            <div className='min-w-60'>
-                <p onClick={() => setShowFilter(!showFilter)} className='my-2 text-xl flex items-center cursor-pointer gap-2'>
-                    FILTERS
-                    <img className={`h-3 sm:hidden ${showFilter ? 'rotate-90' : ''}`} src={assets.dropdown_icon} alt="" />
-                </p>
-
-
-
-
-                {/*category filter */}
-                <div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '' : 'hidden'} sm:block`} >
-                    <p className='mb-3 text-sm front-medium'>CATEGORIES</p>
-                    <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
-                        <p className='flex gap-2'>
-                            <input className='w-3' type="checkbox" value={'Men'} onChange={togglecategory} />Men
-                        </p>
-                        <p className='flex gap-2'>
-                            <input className='w-3' type="checkbox" value={'Women'} onChange={togglecategory} />Women
-                        </p>
-                        <p className='flex gap-2'>
-                            <input className='w-3' type="checkbox" value={'Kids'} onChange={togglecategory} />Kids
-                        </p>
-                    </div>
-                </div>
-                {/* subcategory filter*/}
-                <div className={`border border-gray-300 pl-5 py-3 my-5 ${showFilter ? '' : 'hidden'} sm:block`} >
-                    <p className='mb-3 text-sm front-medium'>TYPE</p>
-                    <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
-                        <p className='flex gap-2'>
-                            <input className='w-3' type="checkbox" value={'Topwear'} onChange={toggleSubcategory} />Topwear
-                        </p>
-                        <p className='flex gap-2'>
-                            <input className='w-3' type="checkbox" value={'Bottomwear'} onChange={toggleSubcategory} />Bottomwear
-                        </p>
-                        <p className='flex gap-2'>
-                            <input className='w-3' type="checkbox" value={'Winterwear'} onChange={toggleSubcategory} />Winterwear
-                        </p>
-                    </div>
-                </div>
+        <div className="homepage flex flex-col min-h-screen">
+            {/* Sidebar */}
+            <div className="w-64">
+                <SidebarWithBurgerMenu />
             </div>
-            {/*right side */}
-            <div className='flex-1'>
-                <div className='flex justify-between text-base sm :text-2xl mb-4 '>
-                    <Title text1={'ALL'} text2={'COLLECTIONS'} />
-                    {/*product sort */}
-                    <select onChange={(e) => setSortType(e.target.value)} className='border-2 border-gray-300 text-sm px-2'>
-                        <option value="relavent">Sort by: Relevent</option>
-                        <option value="low-high">Sort by: Low to High</option>
-                        <option value="high-low">Sort by: High to Low</option>
-                    </select>
+
+            <div className="p-6 pl-6 bg-gray-900 min-h-screen mr-20 ml-40">
+                {/* Collections Title */}
+                <h1 className="text-5xl font-bold text-gray-100 text-center mb-8">
+                    Collections
+                </h1>
+
+                {/* Tutorials Section */}
+
+
+                <div className="grid grid-cols-3 gap-6 mt-4 ml-4">
+                    <Link to="/simulation" className='relative cursor-pointer transform transition duration-300 hover:scale-105'>
+                        <img
+                            src="/src/assets/tarkashi.jpg"
+                            alt="Tarkashi"
+                            className="w-full h-36 object-cover rounded-lg shadow-md"
+                        />
+                        <h3 className="mt-2 text-gray-300 text-center">Tarkashi Wood Carving</h3>
+                    </Link>
+
+                    <Link to="/thattu" className="cursor-pointer transform transition duration-300 hover:scale-105">
+                        <img
+                            src="/src/assets/tj_thattu.jpeg"
+                            alt="Model 2"
+                            className="w-full h-36 object-cover rounded-lg shadow-md"
+                        />
+                        <h3 className="mt-2 text-gray-300 text-center">Thanjavur Thattu</h3>
+                    </Link>
+
+                    <Link to="/kalam1" className="cursor-pointer transform transition duration-300 hover:scale-105">
+                        <img
+                            src="/src/assets/kalamkari_tut.jpg"
+                            alt="Kalamkari"
+                            className="w-full h-36 object-cover rounded-lg shadow-md"
+                        />
+                        <h3 className="mt-2 text-gray-300 text-center">Kalmakari</h3>
+                    </Link>
                 </div>
-                {/* map products */}
-                <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-4 lg:grid-cols-5 gap-4 gap-y-6'>
-                    {
-                        filterProducts.map((item, index) => (
-                            <ProductsItem key={index} name={item.name} id={item.id} price={item.price} image={item.image} />
-                        ))
-                    }
-                </div>
+
+
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Collection
+export default Collection;

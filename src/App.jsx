@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Home'; // Your home page component
 import BestSeller from './components/BestSeller'; // BestSeller component
 import Quiz from './pages/Quiz'; // Quiz component
+import Collection from './pages/Collection';
 import MainQuiz from './pages/MainQuiz'; // Main quiz component
 import Simulations from './Simulators/Tarkashi/Simulations'; // Simulations page
 import Border from './Simulators/Tarkashi/Border'; // Border component/page
@@ -43,6 +44,7 @@ const App = () => {
         <Route path='/thattu' element={<App2/>}/>
         {/* Route for 3dsim thattu */}
         <Route path='/3d-view' element={<Thattu3DPage/>}/>
+        <Route path='/collection' element={<Collection/>}/>
         {/* Kalamkari first page */}
         <Route path='/kalam1' element={<KalamkariSimulations/>}/>
         {/* designs */}

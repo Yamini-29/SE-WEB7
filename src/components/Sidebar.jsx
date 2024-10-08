@@ -31,11 +31,12 @@ export function SidebarWithBurgerMenu() {
       <div className={`fixed inset-y-0 left-0 z-50 bg-black p-4 shadow-lg transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
         {/* Close Button Inside Sidebar */}
         <button
-          onClick={toggleSidebar}
-          className="absolute top-4 right-4 z-50 p-2 bg-gray-800 text-white rounded"
-        >
-          <FaArrowLeftLong /> {/* Close arrow icon */}
-        </button>
+  onClick={toggleSidebar}
+  className="absolute top-4 right-4 z-50 p-2 bg-gray-800 text-white rounded"
+>
+  <FaArrowLeftLong className="w-4 h-4" /> {/* Adjusted Close arrow icon size */}
+</button>
+
 
         <Card
           color="transparent"
@@ -79,7 +80,7 @@ export function SidebarWithBurgerMenu() {
               <ListItemPrefix>
                 <Cog6ToothIcon className="h-5 w-5 text-white" />
               </ListItemPrefix>
-              <Link to="/settings" className="text-gray-100">Settings</Link>
+              <Link to="/collection" className="text-gray-100">Simulators</Link>
             </ListItem>
 
             <ListItem>
