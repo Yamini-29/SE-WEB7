@@ -23,8 +23,8 @@ function Canvas({ selectedBorder }) {
   };
 
   const handleViewIn3D = () => {
-    const borderTexture = borderImage || 'src/assets/border1-removebg-preview.png'; // Provide default border if none is selected
-    const newWindow = window.open(`/3d-view?borderTexture=${encodeURIComponent(borderTexture)}`, '_blank'); // Corrected line
+    const borderTexture = borderImage || 'src/assets/border1-removebg-preview.png'; 
+    const newWindow = window.open(`/3d-view?borderTexture=${encodeURIComponent(borderTexture)}`, '_blank'); 
     if (newWindow) {
       newWindow.focus();
     }
@@ -35,8 +35,8 @@ function Canvas({ selectedBorder }) {
       <h2 className="h2">Selected Border</h2>
       <div
         ref={(node) => {
-          drop(node);   // Attach drop ref to the div
-          canvasRef.current = node;  // Attach canvasRef to the same div
+          drop(node);   
+          canvasRef.current = node;  
         }}
         className="canvas"
       >
