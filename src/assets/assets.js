@@ -14,6 +14,13 @@ import star_icon from './star_icon.png'
 import support_img from './support_img.png'
 import menu_icon from './menu_icon.png'
 
+import tarkashi_info_img from './tarkashi.jpg'
+import tarkashi_history_img from './tarkashi_history_img.jpg'
+import Thattu_info_img from './Thattu_info.png'
+import Thattu_history_img from './Thattu_history.jpg'
+import kalamkari_info_img from './kalamkari_info.jpg'
+import kalamkari_history_img from './kalamkari_history.jpg'
+
 
 import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
@@ -33,6 +40,13 @@ export const assets = {
     bin_icon,
     support_img,
     menu_icon,
+
+    tarkashi_info_img,
+    tarkashi_history_img,
+    Thattu_info_img,
+    Thattu_history_img,
+    kalamkari_info_img,
+    kalamkari_history_img,
 
     
     razorpay_logo,

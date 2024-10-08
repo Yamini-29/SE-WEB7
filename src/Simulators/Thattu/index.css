@@ -1,0 +1,40 @@
+.app {
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.elements {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.canvas {
+  margin: 0 auto;
+  position: relative;
+  border: 2px solid black;
+  background-color: #f0f0f0;
+}
+
+/* Shape styling for the canvas */
+.shape {
+  position: absolute;
+}
+
+.circle {
+  border-radius: 50%;
+  background-color: red;
+}
+
+.square {
+  background-color: blue;
+}
+
+.ornament {
+  background-color: green;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}

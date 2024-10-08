@@ -1,32 +1,20 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import html2canvas from "html2canvas";
-import d1 from '../../assets/1.png';
-import d2 from '../../assets/2.png';
-import d3 from '../../assets/3.png';
-import d4 from '../../assets/4.png';
-import d5 from '../../assets/5.png';
-import d6 from '../../assets/6.png';
-import d7 from '../../assets/7.png';
-import d8 from '../../assets/8.png';
-import d9 from '../../assets/9.png';
-import d10 from '../../assets/10.png';
+import border1 from '../../assets/border1.png';
+import border2 from '../../assets/border2.png';
+import border3 from '../../assets/9.png'
+import border4 from '../../assets/10.png'
 
 const borderImages = [
-    { src: d1, alt: "Border 1" },
-    { src: d2, alt: "Border 2" },
-    { src: d3, alt: "Border 3" },
-    { src: d4, alt: "Border 4" },
-    { src: d5, alt: "Border 5" },
-    { src: d6, alt: "Border 6" },
-    { src: d7, alt: "Border 7" },
-    { src: d8, alt: "Border 8" },
-    { src: d9, alt: "Border 9" },
-    { src: d10, alt: "Border 10" },
-    
+    { src: border1, alt: "Border 1" },
+    { src: border2, alt: "Border 2" },
+    { src: border3, alt: "Border 3" },
+    { src: border4, alt: "Border 4" },
+    { src: "https://via.placeholder.com/150?text=Border+3", alt: "Border 5" },
 ];
 
-const Designs = () => {
+const Border = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const { droppedImage } = location.state || {};
@@ -51,10 +39,25 @@ const Designs = () => {
             link.click();
         });
     };
+
+    const handleWatchIn3D = () => {
+        const element = document.getElementById("capture");
+        html2canvas(element).then((canvas) => {
+            const link = canvas.toDataURL("image/png");
+            // Navigate to the 3D simulator
+            navigate("/3dsim", { 
+                state: { 
+                    backgroundImage: droppedImage, 
+                    combinedImage: link // Pass the combined image
+                } 
+            });
+        });
+    };
+
     return (
         <div className="Desktop2" style={{ width: "100%", height: "100vh", position: "relative", background: "white", fontFamily: "Inter", padding: "20px", display: "flex" }}>
             <div style={{ flex: "1", maxHeight: "600px", marginRight: "20px", background: "#D9D9D9", borderRadius: "10px", padding: "20px", boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)", overflowY: "auto" }}>
-                <h2 style={{ textAlign: "center", marginBottom: "15px" }}>Select Border</h2>
+                <h2 className='text-black' style={{ textAlign: "center", marginBottom: "15px" }}>Select Carving style(Click to select)</h2>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                     {borderImages.map((image) => (
                         <img
@@ -110,9 +113,15 @@ const Designs = () => {
                 >
                     Save Image
                 </button>
+                <button
+                    onClick={handleWatchIn3D}
+                    style={{ padding: "10px 20px", backgroundColor: "#4CAF50", color: "white", border: "none", borderRadius: "5px", cursor: "pointer", fontSize: "16px" }}
+                >
+                    Watch in 3D
+                </button>
             </div>
         </div>
     );
 };
 
-export default Designs;
+export default Border;

@@ -5,7 +5,7 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 const models = [
   { id: 1, title: "Tarkashi Wood Carving", image: "/src/assets/tarkashi.jpg" },
-  { id: 2, title: "Model 2", image: "src/assets/tj_thattu.jpeg" },
+  { id: 2, title: "Thanjavur Thattu", image: "src/assets/tj_thattu.jpeg" },
   { id: 3, title: "Kalamkari", image: "src/assets/kalamkari_tut.jpg" }
 ];
 
@@ -34,7 +34,7 @@ export default function BestSellerPage() {
         {models.map((model) => (
           <Link
             key={model.id}
-            to={`/simulation`}
+            to={`/productinfo/${model.id}`}
             className='relative cursor-pointer transform transition duration-300 hover:scale-105'
           >
             <img

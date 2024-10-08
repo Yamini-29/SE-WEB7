@@ -5,7 +5,7 @@ import { TextureLoader } from 'three';
 import { useLocation } from 'react-router-dom';
 
 
-const KalamkariSimulator = () => {
+const Simulator = () => {
     const location = useLocation();
     const { backgroundImage, combinedImage } = location.state || {};
 
@@ -51,4 +51,4 @@ const KalamkariSimulator = () => {
     );
 };
 
-export default KalamkariSimulator;
+export default Simulator;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import silk from '../../assets/silkcloth.png';
-import cotton from '../../assets/cotton.png';
-// import image3 from '../../assets/sui.jpg'; // Uncomment if needed
+import image1 from '../../assets/dark.jpg';
+import image2 from '../../assets/light.jpeg';
+import image3 from '../../assets/sui.jpg';
 
 const Simulations = () => {
     const [droppedImage, setDroppedImage] = useState(null);
@@ -23,18 +23,20 @@ const Simulations = () => {
     };
 
     const handleAddBorderClick = () => {
-        navigate("/designs", { state: { droppedImage } }); // the dropped image as state
+        navigate("/border", { state: { droppedImage } }); // the dropped image as state
     };
 
     return (
         <div
             className="Desktop2"
             style={{
-                display: "flex",
+                width: "100%",
                 height: "100vh",
+                position: "relative",
                 background: "white",
                 fontFamily: "Inter",
                 padding: "20px",
+                display: "flex",
             }}
         >
             {/* Sidebar for Background Selection */}
@@ -43,14 +45,14 @@ const Simulations = () => {
                     flex: "1",
                     maxHeight: "600px",
                     marginRight: "20px",
-                    background: "black",
+                    background: "#D9D9D9",
                     borderRadius: "10px",
                     padding: "20px",
                     boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
                     overflowY: "auto",
                 }}
             >
-                <h2 style={{ textAlign: "center", marginBottom: "15px" }}>Drag and Drop the Cloth</h2>
+                <h2 style={{ textAlign: "center", marginBottom: "15px" }}>Select Wood Type</h2>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                     <img
                         style={{
@@ -61,7 +63,7 @@ const Simulations = () => {
                             boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
                             transition: "transform 0.2s",
                         }}
-                        src={silk}
+                        src={image1}
                         alt="Image 1"
                         draggable
                         onDragStart={handleDragStart}
@@ -77,15 +79,14 @@ const Simulations = () => {
                             boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)", 
                             transition: "transform 0.2s",
                         }}
-                        src={cotton}
+                        src={image2}
                         alt="Image 2"
                         draggable
                         onDragStart={handleDragStart}
                         onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
                         onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
                     />
-                    {/* Uncomment the following if you want to use image3 */}
-                    {/* <img
+                    <img
                         style={{
                             width: "80%",
                             margin: "10px 0",
@@ -100,7 +101,7 @@ const Simulations = () => {
                         onDragStart={handleDragStart}
                         onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
                         onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-                    /> */}
+                    />
                 </div>
             </div>
 
@@ -109,8 +110,8 @@ const Simulations = () => {
                 className="Rectangle1"
                 style={{
                     flex: "3",
-                    height: "100%", // Changed from fixed height to 100%
-                    background: "black",
+                    height: "600px",
+                    background: "#D9D9D9",
                     borderRadius: "10px",
                     boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
                     display: "flex",
@@ -127,7 +128,7 @@ const Simulations = () => {
                         width: "100%",
                         height: "100%",
                         position: "relative",
-                        background: droppedImage ? `url(${droppedImage}) center/cover` : "#000", // Changed from #black to #000
+                        background: droppedImage ? `url(${droppedImage}) center/cover` : "#D9D9D9",
                         borderRadius: "10px",
                         display: "flex",
                         alignItems: "center",
@@ -137,7 +138,7 @@ const Simulations = () => {
                     {!droppedImage && (
                         <span
                             style={{
-                                color: "white", // Changed from black to white for better contrast
+                                color: "black",
                                 fontSize: "3vw",
                                 fontWeight: "400",
                                 textAlign: "center",
@@ -157,7 +158,7 @@ const Simulations = () => {
                 style={{
                     marginTop: "20px",
                     padding: "10px 20px",
-                    backgroundColor: "black",
+                    backgroundColor: "#4CAF50",
                     color: "white",
                     border: "none",
                     borderRadius: "5px",
@@ -169,7 +170,7 @@ const Simulations = () => {
                     transform: "translateX(-50%)",
                 }}
             >
-                Add Border
+                Add Carvings
             </button>
         </div>
     );

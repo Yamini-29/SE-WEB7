@@ -10,19 +10,6 @@ const Footer = () => {
 
   
 
-        <div>
-            <p className='text-x1 font-medium mb-5'>GET IN TOUCH</p>
-            <ul className='flex flex-col gap-1 text-gray-600'>
-                
-                <li>cs23b049@iittp.com cs23b059@iittp.com</li>
-        
-                <li>cs23b024@iittp.com cs23b001@iittp.com</li>
-             
-                <li>cs21b056@iittp.com cs21b051@iittp.com</li>
-               
-            </ul>
-
-        </div>
 
       </div>
 
