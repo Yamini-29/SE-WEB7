@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import MainRouter from './Routes.jsx'; // Import the new routing file
+import MainRouter from './Routes.jsx'; 
 
 ReactDOM.render(
   <React.StrictMode>
-    <MainRouter /> {/* Use MainRouter for handling routes */}
+    <MainRouter /> 
   </React.StrictMode>,
   document.getElementById('root')
 );
