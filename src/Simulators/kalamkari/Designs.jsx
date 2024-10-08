@@ -19,7 +19,11 @@ const borderImages = [
     { src: d4, alt: "Border 4" },
     { src: d5, alt: "Border 5" },
     { src: d6, alt: "Border 6" },
-    { src: "https://via.placeholder.com/150?text=Border+3", alt: "Border last" },
+    { src: d7, alt: "Border 7" },
+    { src: d8, alt: "Border 8" },
+    { src: d9, alt: "Border 9" },
+    { src: d10, alt: "Border 10" },
+    
 ];
 
 const Border = () => {

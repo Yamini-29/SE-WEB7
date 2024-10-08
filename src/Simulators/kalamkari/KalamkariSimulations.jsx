@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import silk from '../../assets/silkcloth.png';
 import cotton from '../../assets/cotton.png';
-import image3 from '../../assets/sui.jpg';
+// import image3 from '../../assets/sui.jpg'; // Uncomment if needed
 
 const Simulations = () => {
     const [droppedImage, setDroppedImage] = useState(null);
@@ -30,13 +30,11 @@ const Simulations = () => {
         <div
             className="Desktop2"
             style={{
-                width: "100%",
+                display: "flex",
                 height: "100vh",
-                position: "relative",
                 background: "white",
                 fontFamily: "Inter",
                 padding: "20px",
-                display: "flex",
             }}
         >
             {/* Sidebar for Background Selection */}
@@ -86,6 +84,7 @@ const Simulations = () => {
                         onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
                         onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
                     />
+                    {/* Uncomment the following if you want to use image3 */}
                     {/* <img
                         style={{
                             width: "80%",
@@ -110,7 +109,7 @@ const Simulations = () => {
                 className="Rectangle1"
                 style={{
                     flex: "3",
-                    height: "600px",
+                    height: "100%", // Changed from fixed height to 100%
                     background: "black",
                     borderRadius: "10px",
                     boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
@@ -128,7 +127,7 @@ const Simulations = () => {
                         width: "100%",
                         height: "100%",
                         position: "relative",
-                        background: droppedImage ? `url(${droppedImage}) center/cover` : "#black",
+                        background: droppedImage ? `url(${droppedImage}) center/cover` : "#000", // Changed from #black to #000
                         borderRadius: "10px",
                         display: "flex",
                         alignItems: "center",
@@ -138,7 +137,7 @@ const Simulations = () => {
                     {!droppedImage && (
                         <span
                             style={{
-                                color: "black",
+                                color: "white", // Changed from black to white for better contrast
                                 fontSize: "3vw",
                                 fontWeight: "400",
                                 textAlign: "center",

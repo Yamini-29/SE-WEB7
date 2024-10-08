@@ -8,12 +8,17 @@ import KalamkariSimulations from './Simulators/kalamkari/KalamkariSimulations'
 import KalamkariSimulator from './Simulators/kalamkari/KalamkariSimulator'
 import Designs from './Simulators/kalamkari/Designs'
 import Footer from './components/Footer';
+
+import { SidebarWithBurgerMenu } from './components/Sidebar';
 const App = () => {
   return (
+    
     <div>
+      <SidebarWithBurgerMenu/>
       <Routes>
         {/* Home Page */}
-        <Route path='/' element={<HomePage />} />
+
+        <Route index element={<HomePage />} />
 
         {/* Other Pages */}
         <Route path='/border' element={<Designs />} />
