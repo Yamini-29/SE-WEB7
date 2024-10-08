@@ -54,7 +54,7 @@ const Designs = () => {
     return (
         <div className="Desktop2" style={{ width: "100%", height: "100vh", position: "relative", background: "white", fontFamily: "Inter", padding: "20px", display: "flex" }}>
             <div style={{ flex: "1", maxHeight: "600px", marginRight: "20px", background: "#D9D9D9", borderRadius: "10px", padding: "20px", boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)", overflowY: "auto" }}>
-                <h2 style={{ textAlign: "center", marginBottom: "15px" }}>Select Border</h2>
+                <h2 className="text-black" style={{ textAlign: "center", marginBottom: "15px" }}>Tap to add Design</h2>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                     {borderImages.map((image) => (
                         <img
