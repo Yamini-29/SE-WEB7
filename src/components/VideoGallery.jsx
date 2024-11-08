@@ -8,12 +8,12 @@ const videos = [
   },
   {
     title: 'Thanjavur Thattu',
-    src: '/src/assets/kalamkari.mp4',
+    src: '/src/assets/thattu.mp4',
     thumbnail: '/src/assets/tj_thattu.jpeg',
   },
   {
     title: 'Tarkashi',
-    src: '/src/assets/kalamkari.mp4',
+    src: '/src/assets/taksh.mp4',
     thumbnail: '/src/assets/tarkashi.jpg',
   },
 ];
