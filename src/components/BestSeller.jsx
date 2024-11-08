@@ -31,21 +31,22 @@ export default function BestSellerPage() {
       </h2>
 
       <div className="grid grid-cols-3 gap-6 mt-4 ml-4">
-        {models.map((model) => (
-          <Link
-            key={model.id}
-            to={`/productinfo/${model.id}`}
-            className='relative cursor-pointer transform transition duration-300 hover:scale-105'
-          >
-            <img
-              src={model.image}
-              alt={model.title}
-              className="w-full h-36 object-cover rounded-lg shadow-md"
-            />
-            <h3 className="mt-2 text-gray-300 text-center">{model.title}</h3>
-          </Link>
-        ))}
-      </div>
+  {models.map((model) => (
+    <Link
+      key={model.id}
+      to={`/productinfo/${model.id}`}
+      className="relative cursor-pointer transform transition duration-300 hover:scale-105"
+    >
+      <img
+        src={model.image}
+        alt={model.title}
+        className="w-full h-36 object-cover rounded-lg shadow-md"
+      />
+      <h3 className="mt-2 text-gray-300 text-center">{model.title}</h3>
+    </Link>
+  ))}
+</div>
+
     </div>
   );
 }

@@ -16,10 +16,12 @@ import KalamkariSimulations from './Simulators/Kalamkari/KalamkariSimulations'
 import Designs from './Simulators/Kalamkari/Designs'
 import KalamkariSimulator from './Simulators/Kalamkari/KalamkariSimulator'
 import { SidebarWithBurgerMenu } from './components/Sidebar';
-
+import PreLoader from './components/PreLoader';
 const App = () => {
   return (
 <div>
+  <>
+  <PreLoader/>
   <SidebarWithBurgerMenu/>
   <Routes>
         {/* Home Page */}
@@ -54,6 +56,7 @@ const App = () => {
         {/* For kalamkari final */}
         <Route path='/kalamsim' element={<KalamkariSimulator/>}/>
       </Routes>
+      </>
     </div>
   );
 };
