@@ -47,6 +47,28 @@ const modelQuizzes = {
             answer: "Polishing",
         },
     ],
+    ThanjavurThattu: [
+        {
+            question: "What is the primary material used in crafting a traditional Thanjavur Thattu?",
+            options: ["Silver", "Copper", "Brass", "Bronze"],
+            answer: "Brass",
+        },
+        {
+            question: "Thanjavur Thattu is a traditional plate primarily used for what purpose in Tamil Nadu?",
+            options: ["Decorative wall art", "Rituals and offerings in temples", "Serving meals", "Musical performances"],
+            answer: "Serving meals",
+        },
+        {
+            question: "Which distinctive artistic feature is often found on a Thanjavur Thattu?",
+            options: ["Floral engravings", "Gemstone inlays", "Enamel painting", "Mirror work"],
+            answer: "Floral engravings",
+        },
+        {
+            question: "The engravings on a traditional Thanjavur Thattu often draw inspiration from which of the following themes?",
+            options: ["Epics and deities central to Tamil folklore", "Abstract geometric designs of South Indian origin", "Traditional Tamil Nadu flora and fauna", "Maritime imagery linked to Tamil Nadu's coast"],
+            answer: "Epics and deities central to Tamil folklore",
+        },
+    ],
 };
 
 export default function Quiz() {
