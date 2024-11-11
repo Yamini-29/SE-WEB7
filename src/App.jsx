@@ -15,8 +15,11 @@ import Thattu3DView from './Simulators/Thattu/Thattu3DView'
 import KalamkariSimulations from './Simulators/Kalamkari/KalamkariSimulations'
 import Designs from './Simulators/Kalamkari/Designs'
 import KalamkariSimulator from './Simulators/Kalamkari/KalamkariSimulator'
+import DhokraSimulator from './Simulators/Dhokra/dhokra'
 import { SidebarWithBurgerMenu } from './components/Sidebar';
 import PreLoader from './components/PreLoader';
+import Leaderboard from './pages/leaderboard'
+import DhokraSim from './Simulators/Dhokra/dhokraSimulator'
 const App = () => {
   return (
 <div>
@@ -51,10 +54,13 @@ const App = () => {
         <Route path='/collection' element={<Collection/>}/>
         {/* Kalamkari first page */}
         <Route path='/kalam1' element={<KalamkariSimulations/>}/>
+        <Route path='/dhokra' element={<DhokraSimulator/>}/>
         {/* designs */}
         <Route path='/designs' element={<Designs/>}/>
         {/* For kalamkari final */}
         <Route path='/kalamsim' element={<KalamkariSimulator/>}/>
+        <Route path='/leaderboard' element={<Leaderboard/>}/>
+        <Route path='/dhokraSimulation' element={<DhokraSim/>} />
       </Routes>
       </>
     </div>

@@ -6,7 +6,8 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline';
 const models = [
   { id: 1, title: "Tarkashi Wood Carving", image: "/src/assets/tarkashi.jpg" },
   { id: 2, title: "Thanjavur Thattu", image: "src/assets/tj_thattu.jpeg" },
-  { id: 3, title: "Kalamkari", image: "src/assets/kalamkari_tut.jpg" }
+  { id: 3, title: "Kalamkari", image: "src/assets/kalamkari_tut.jpg" },
+  { id: 4, title: "Dhokra", image: "src/assets/dhokra.jpg" }
 ];
 
 export default function BestSellerPage() {
