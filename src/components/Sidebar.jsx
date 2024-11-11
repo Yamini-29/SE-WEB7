@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { BsMenuButtonFill } from "react-icons/bs";
 import {
   Typography,
   List,
@@ -17,7 +18,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { FaBars } from "react-icons/fa"; // React Menu Icon for the button
 import { FaArrowLeftLong } from "react-icons/fa6"; // Close button
-import { BsMenuButtonFill } from "react-icons/bs";
+import { HiAcademicCap } from "react-icons/hi2";
 export function SidebarWithBurgerMenu() {
   const [isOpen, setIsOpen] = useState(false); // State to manage sidebar visibility
 
@@ -77,6 +78,12 @@ export function SidebarWithBurgerMenu() {
               </ListItemPrefix>
               <Link to="/collection" className="text-gray-100">Simulators</Link>
             </ListItem>
+            <ListItem>
+              <ListItemPrefix>
+                <HiAcademicCap className="h-5 w-5 text-white" />
+              </ListItemPrefix>
+              <Link to="/contest" className="text-gray-100">Contest</Link>
+            </ListItem>
 
             <ListItem>
               <ListItemPrefix>
@@ -101,8 +108,7 @@ export function SidebarWithBurgerMenu() {
           onClick={toggleSidebar}
           className="fixed top-6 left-4 z-50 p-4  text-white rounded flex items-center justify-center text-xl"
         >
-          <BsMenuButtonFill className="w-6 h-6" /> {/* React Menu Icon */}
-        
+          <BsMenuButtonFill className="w-10 h-10" /> {/* React Menu Icon */}
         </button>
       )}
 
