@@ -17,6 +17,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa"; // Import arrow icons
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { HiAcademicCap } from "react-icons/hi2";
 
 export function SidebarWithBurgerMenu() {
   const [isOpen, setIsOpen] = useState(false); // State to manage sidebar visibility
@@ -74,6 +75,13 @@ export function SidebarWithBurgerMenu() {
                 <ChatBubbleOvalLeftEllipsisIcon className="h-5 w-5 text-white" />
               </ListItemPrefix>
               <Link to="/community" className="text-gray-100">Community</Link>
+            </ListItem>
+
+            <ListItem>
+              <ListItemPrefix>
+                <HiAcademicCap className="h-5 w-5 text-white" />
+              </ListItemPrefix>
+              <Link to="/contest" className="text-gray-100">Contest</Link>
             </ListItem>
 
             <ListItem>

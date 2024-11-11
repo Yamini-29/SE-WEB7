@@ -17,6 +17,7 @@ import Designs from './Simulators/Kalamkari/Designs'
 import KalamkariSimulator from './Simulators/Kalamkari/KalamkariSimulator'
 import { SidebarWithBurgerMenu } from './components/Sidebar';
 import PreLoader from './components/PreLoader';
+import Contest from './pages/Contest';
 const App = () => {
   return (
 <div>
@@ -34,7 +35,8 @@ const App = () => {
 
         {/* Quiz Page */}
         <Route path='/quiz' element={<Quiz />} />
-
+        {/* Contest Page */}
+        <Route path='/contest' element={<Contest />} />
         {/* Main Quiz Page (if it's separate from Quiz) */}
         <Route path='/mainquiz' element={<MainQuiz />} />
 
