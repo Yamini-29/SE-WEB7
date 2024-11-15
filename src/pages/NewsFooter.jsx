@@ -12,19 +12,19 @@ export default function CulturalFooter() {
       setTimeout(() => {
         setIsSlidingOut(false); // Reset animation state
         setIsVerified(true); // Show success message
+
+        // Set a timer to revert back to the input form after 5 seconds
+        setTimeout(() => {
+          setIsSlidingOut(true); // Start slide-out animation for success message
+          setTimeout(() => {
+            setIsSlidingOut(false); // Reset animation state
+            setIsVerified(false); // Show input form again
+          }, 500); // Duration to match CSS transition for fade-out
+        }, 5000);
       }, 500); // Match duration with CSS animation
     } else {
       alert("Please enter a valid email address.");
     }
-  };
-
-  const handleAddAnother = () => {
-    setIsSlidingOut(true); // Start slide-out animation
-    setTimeout(() => {
-      setIsSlidingOut(false); // Reset animation state
-      setEmail('');
-      setIsVerified(false); // Show input form again
-    }, 500); // Match duration with CSS animation
   };
 
   return (
@@ -40,12 +40,12 @@ export default function CulturalFooter() {
 
       {/* Center Content */}
       <div
-        className={`flex flex-col items-center space-y-4 w-full max-w-lg transition-transform duration-500 ease-in-out ${
-          isSlidingOut ? '-translate-x-full opacity-0' : 'translate-x-0 opacity-100'
+        className={`flex flex-col items-center space-y-4 w-full max-w-lg transition-opacity transform duration-700 ease-in-out ${
+          isSlidingOut ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0'
         }`}
       >
         {isVerified ? (
-          // Success Message with Slide-In Animation
+          // Success Message with Fade-In and Slide-Up Animation
           <div className="flex flex-col items-center space-y-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -56,12 +56,6 @@ export default function CulturalFooter() {
               <path d="M9 16.2l-3.5-3.5-1.4 1.4 4.9 4.9 12-12-1.4-1.4-10.6 10.6z" />
             </svg>
             <h3 className="text-xl font-semibold">Successfully Sent!</h3>
-            <button
-              onClick={handleAddAnother}
-              className="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-500 transition"
-            >
-              Add Another Member
-            </button>
           </div>
         ) : (
           <>

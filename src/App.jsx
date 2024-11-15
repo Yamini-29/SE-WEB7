@@ -11,15 +11,19 @@ import Simulator from './Simulators/Tarkashi/Simulator'; // 3D simulator page
 import Chatroom from './pages/Chatroom';
 import ProductInfo from './pages/ProductInfo';
 import App2 from './Simulators/Thattu/App2';
+import NewsFooter from './pages/NewsFooter';
 import Thattu3DView from './Simulators/Thattu/Thattu3DView'
 import KalamkariSimulations from './Simulators/kalamkari/KalamkariSimulations'
 import Designs from './Simulators/kalamkari/Designs'
+import Tutorials from './pages/Tutorials';
 import KalamkariSimulator from './Simulators/kalamkari/KalamkariSimulator'
 import DhokraSimulator from './Simulators/Dhokra/dhokra'
 import { SidebarWithBurgerMenu } from './components/Sidebar';
 import PreLoader from './components/PreLoader';
 import Leaderboard from './pages/leaderboard'
 import DhokraSim from './Simulators/Dhokra/dhokraSimulator'
+import Stone from './pages/Stone';
+import Indiswords from './pages/Indiswords';
 import Contest from './pages/Contest';
 const App = () => {
   return (
@@ -46,6 +50,9 @@ const App = () => {
 
         {/* BestSeller Page */}
         <Route path='/bestseller' element={<BestSeller />} />
+
+        {/* Tutorials Page */}
+        <Route path='/tutorials' element={<Tutorials />} />
         {/* Community Page */}
         <Route path='/community' element={<Chatroom/>}/>
         {/* Different prudct page */}
@@ -56,6 +63,7 @@ const App = () => {
         <Route path='/3d-view' element={<Thattu3DPage/>}/>
         <Route path='/collection' element={<Collection/>}/>
         {/* Kalamkari first page */}
+
         <Route path='/kalam1' element={<KalamkariSimulations/>}/>
         <Route path='/dhokra' element={<DhokraSimulator/>}/>
         {/* designs */}
@@ -64,10 +72,10 @@ const App = () => {
         <Route path='/kalamsim' element={<KalamkariSimulator/>}/>
         <Route path='/leaderboard' element={<Leaderboard/>}/>
         <Route path='/dhokraSimulation' element={<DhokraSim/>} />
+        <Route path='/stone' element={<Stone />} />
+          <Route path='/indiswords' element={<Indiswords />} />
       </Routes>
-      <div className="overflow-hidden min-h-screen">
-      <BestSeller />
-</div>
+      
 
       </>
     </div>
