@@ -28,6 +28,15 @@ const productContents = {
     infoImage: assets.kalamkari_info_img,
     historyImage: assets.kalamkari_history_img,
     route: '/kalam1'
+  },
+
+  4: {
+    title: "Dhokra",
+    description: "Metal casting has been used in India for over 4,000 years, and Dhokra (sometimes written Dokra) is a nonferrous metal lost-wax casting procedure.Each piece of Dokra craftsmanship has its own distinct individuality. As it is the rarest form of art and in today’s fast world it is near about to extinct for the lack of its formation place and not enough marketing stores.",
+    additionalContent: "There are two main processes of lost wax casting: solid casting and hollow casting. While the former is predominant in the south of India the latter is more common in Central and Eastern India. Solid casting does not use a clay core but instead a solid piece of wax to create the mould; hollow casting is the more traditional method and uses the clay core",
+    infoImage: assets.dhokra_info,
+    historyImage: assets.dhokra_info2,
+    route: '/dhokra'
   }
 };
 

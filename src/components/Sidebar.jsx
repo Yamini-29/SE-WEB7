@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { BsMenuButtonFill } from "react-icons/bs";
 import {
   Typography,
   List,
@@ -15,10 +16,9 @@ import {
   ChatBubbleOvalLeftEllipsisIcon,
   HomeIcon,
 } from "@heroicons/react/24/solid";
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa"; // Import arrow icons
-import { FaArrowLeftLong } from "react-icons/fa6";
+import { FaBars } from "react-icons/fa"; // React Menu Icon for the button
+import { FaArrowLeftLong } from "react-icons/fa6"; // Close button
 import { HiAcademicCap } from "react-icons/hi2";
-
 export function SidebarWithBurgerMenu() {
   const [isOpen, setIsOpen] = useState(false); // State to manage sidebar visibility
 
@@ -32,18 +32,13 @@ export function SidebarWithBurgerMenu() {
       <div className={`fixed inset-y-0 left-0 z-50 bg-black p-4 shadow-lg transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
         {/* Close Button Inside Sidebar */}
         <button
-  onClick={toggleSidebar}
-  className="absolute top-4 right-4 z-50 p-2 bg-gray-800 text-white rounded"
->
-  <FaArrowLeftLong className="w-4 h-4" /> {/* Adjusted Close arrow icon size */}
-</button>
-
-
-        <Card
-          color="transparent"
-          shadow={false}
-          className="h-[calc(100vh-2rem)] w-full p-4"
+          onClick={toggleSidebar}
+          className="absolute top-4 right-4 z-50 p-2 bg-gray-800 text-white rounded"
         >
+          <FaArrowLeftLong className="w-4 h-4" /> {/* Adjusted Close arrow icon size */}
+        </button>
+
+        <Card color="transparent" shadow={false} className="h-[calc(100vh-2rem)] w-full p-4">
           <div className="mb-2 flex items-center gap-4 p-4 text-white">
             <img
               src="https://docs.material-tailwind.com/img/logo-ct-dark.png"
@@ -79,6 +74,12 @@ export function SidebarWithBurgerMenu() {
 
             <ListItem>
               <ListItemPrefix>
+                <Cog6ToothIcon className="h-5 w-5 text-white" />
+              </ListItemPrefix>
+              <Link to="/collection" className="text-gray-100">Simulators</Link>
+            </ListItem>
+            <ListItem>
+              <ListItemPrefix>
                 <HiAcademicCap className="h-5 w-5 text-white" />
               </ListItemPrefix>
               <Link to="/contest" className="text-gray-100">Contest</Link>
@@ -86,16 +87,9 @@ export function SidebarWithBurgerMenu() {
 
             <ListItem>
               <ListItemPrefix>
-                <Cog6ToothIcon className="h-5 w-5 text-white" />
-              </ListItemPrefix>
-              <Link to="/collection" className="text-gray-100">Simulators</Link>
-            </ListItem>
-
-            <ListItem>
-              <ListItemPrefix>
                 <UserCircleIcon className="h-5 w-5 text-white" />
               </ListItemPrefix>
-              <Link to="/profile" className="text-gray-100">Profile</Link>
+              <Link to="/leaderboard" className="text-gray-100">Leaderboard</Link>
             </ListItem>
 
             <ListItem>
@@ -111,14 +105,11 @@ export function SidebarWithBurgerMenu() {
       {/* Toggle Button for Opening Sidebar */}
       {!isOpen && (
         <button
-  onClick={toggleSidebar}
-  className="fixed top-6 left-4 z-50 p-4 bg-violet-900 text-white rounded flex items-center gap-3 text-xl"
->
-  MENU
-  <FaArrowRight className="w-6 h-6" /> {/* Larger Open arrow icon */}
-</button>
-
-
+          onClick={toggleSidebar}
+          className="fixed top-6 left-4 z-50 p-4  text-white rounded flex items-center justify-center text-xl"
+        >
+          <BsMenuButtonFill className="w-10 h-10" /> {/* React Menu Icon */}
+        </button>
       )}
 
       {/* Main Content Area */}

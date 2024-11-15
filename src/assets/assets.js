@@ -20,11 +20,15 @@ import Thattu_info_img from './Thattu_info.png'
 import Thattu_history_img from './Thattu_history.jpg'
 import kalamkari_info_img from './kalamkari_info.jpg'
 import kalamkari_history_img from './kalamkari_history.jpg'
+import dhokra_info from './dhokra_info.jpg'
+import dhokra_info2 from './dhokra_info_2.jpg'
 
+import bg1 from './bg.png'
 
 import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
+
 
 export const assets = {
     
@@ -47,6 +51,9 @@ export const assets = {
     Thattu_history_img,
     kalamkari_info_img,
     kalamkari_history_img,
+    dhokra_info,
+    dhokra_info2,
+    bg1,
 
     
     razorpay_logo,

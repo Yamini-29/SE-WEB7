@@ -14,8 +14,8 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@heroicons/react": "^2.1.5",
     "@material-tailwind/react": "^2.1.10",
-    "@react-three/drei": "^9.114.3",
-    "@react-three/fiber": "^8.17.9",
+    "@react-three/drei": "^9.115.0",
+    "@react-three/fiber": "^8.17.10",
     "firebase": "^10.14.0",
     "gsap": "^3.12.5",
     "html2canvas": "^1.4.1",
@@ -27,6 +27,7 @@
     "react-router-dom": "^6.26.2",
     "react-spinners": "^0.14.1",
     "react-toastify": "^10.0.5",
+    "swiper": "^11.1.14",
     "tailwind-scrollbar-hide": "^1.1.7",
     "three": "^0.169.0"
   },
