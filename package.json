@@ -27,6 +27,7 @@
     "react-router-dom": "^6.26.2",
     "react-spinners": "^0.14.1",
     "react-toastify": "^10.0.5",
+    "swiper": "^11.1.14",
     "tailwind-scrollbar-hide": "^1.1.7",
     "three": "^0.169.0"
   },

@@ -27,6 +27,7 @@ const App = () => {
   <>
   <PreLoader/>
   <SidebarWithBurgerMenu/>
+  
   <Routes>
         {/* Home Page */}
         <Route path='/' element={<HomePage />} />
@@ -64,6 +65,10 @@ const App = () => {
         <Route path='/leaderboard' element={<Leaderboard/>}/>
         <Route path='/dhokraSimulation' element={<DhokraSim/>} />
       </Routes>
+      <div className="overflow-hidden min-h-screen">
+      <BestSeller />
+</div>
+
       </>
     </div>
   );

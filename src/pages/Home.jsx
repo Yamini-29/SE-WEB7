@@ -1,4 +1,5 @@
 import { assets } from "../assets/assets"
+import BestSellerPage from '../components/BestSeller';
 
 const links = [
   { name: 'CREATE UR OWN', href: '#' },
@@ -76,6 +77,8 @@ export default function Example() {
           </dl>
         </div>
       </div>
+
     </div>
+
   )
 }
