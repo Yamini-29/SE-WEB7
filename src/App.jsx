@@ -12,9 +12,9 @@ import Chatroom from './pages/Chatroom';
 import ProductInfo from './pages/ProductInfo';
 import App2 from './Simulators/Thattu/App2';
 import Thattu3DView from './Simulators/Thattu/Thattu3DView'
-import KalamkariSimulations from './Simulators/Kalamkari/KalamkariSimulations'
-import Designs from './Simulators/Kalamkari/Designs'
-import KalamkariSimulator from './Simulators/Kalamkari/KalamkariSimulator'
+import KalamkariSimulations from './Simulators/kalamkari/KalamkariSimulations'
+import Designs from './Simulators/kalamkari/Designs'
+import KalamkariSimulator from './Simulators/kalamkari/KalamkariSimulator'
 import DhokraSimulator from './Simulators/Dhokra/dhokra'
 import { SidebarWithBurgerMenu } from './components/Sidebar';
 import PreLoader from './components/PreLoader';
