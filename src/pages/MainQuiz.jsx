@@ -3,10 +3,15 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export default function MainQuiz() {
-  // Optional: You can animate the background or other elements using useEffect
+  // useEffect lets us animate the background or other elements
   useEffect(() => {
-    // Any effect or animation you want to run when the page loads
+    // Any effect or animation which needs to be run when the page loads
   }, []);
+
+  // Prevent context menu from appearing
+  const handleContextMenu = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100 overflow-hidden">
@@ -29,7 +34,7 @@ export default function MainQuiz() {
 
         {/* Button Links */}
         <motion.div
-          className="flex space-x-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
@@ -37,23 +42,42 @@ export default function MainQuiz() {
           <Link
             to="/quiz"
             state={{ model: "Kalamkari" }}
-            className="bg-blue-600 text-white py-4 px-10 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 transform transition duration-300 text-2xl"
+            onContextMenu={handleContextMenu}
+            className="bg-blue-600 text-white py-4 px-10 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 transform transition duration-300 text-xl font-medium font-poppins"
           >
             Kalamkari
           </Link>
           <Link
             to="/quiz"
             state={{ model: "Tarkashi" }}
-            className="bg-blue-600 text-white py-4 px-10 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 transform transition duration-300 text-2xl"
+            onContextMenu={handleContextMenu}
+            className="bg-blue-600 text-white py-4 px-10 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 transform transition duration-300 text-xl font-medium font-poppins"
           >
             Tarkashi
           </Link>
           <Link
             to="/quiz"
             state={{ model: "ThanjavurThattu" }}
-            className="bg-blue-600 text-white py-4 px-10 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 transform transition duration-300 text-2xl"
+            onContextMenu={handleContextMenu}
+            className="bg-blue-600 text-white py-4 px-10 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 transform transition duration-300 text-xl font-medium font-poppins text-center"
           >
             Thanjavur Thattu
+          </Link>
+          <Link
+            to="/quiz"
+            state={{ model: "Dhokra" }}
+            onContextMenu={handleContextMenu}
+            className="bg-blue-600 text-white py-4 px-10 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 transform transition duration-300 text-xl font-medium font-poppins"
+          >
+            Dhokra
+          </Link>
+          <Link
+            to="/quiz"
+            state={{ model: "ThanjavurBommai" }}
+            onContextMenu={handleContextMenu}
+            className="bg-blue-600 text-white py-4 px-10 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 transform transition duration-300 text-xl font-medium font-poppins text-center"
+          >
+            Thanjavur Bommai
           </Link>
         </motion.div>
       </div>

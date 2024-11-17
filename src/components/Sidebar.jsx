@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { BsMenuButtonFill } from "react-icons/bs";
+import { BsCameraVideo, BsMenuButtonFill } from "react-icons/bs";
 import {
   Typography,
   List,
@@ -16,7 +16,7 @@ import {
   ChatBubbleOvalLeftEllipsisIcon,
   HomeIcon,
 } from "@heroicons/react/24/solid";
-import { FaBars } from "react-icons/fa"; // React Menu Icon for the button
+import { FaBars, FaBook } from "react-icons/fa"; // React Menu Icon for the button
 import { FaArrowLeftLong } from "react-icons/fa6"; // Close button
 import { HiAcademicCap } from "react-icons/hi2";
 export function SidebarWithBurgerMenu() {
@@ -55,49 +55,49 @@ export function SidebarWithBurgerMenu() {
               <ListItemPrefix>
                 <HomeIcon className="h-5 w-5 text-white" />
               </ListItemPrefix>
-              <Link to="/" className="text-gray-100">Home</Link>
+              <Link to="/" className="text-gray-100" onClick={() => setIsOpen(false)}>Home</Link>
             </ListItem>
 
             <ListItem>
               <ListItemPrefix>
                 <InboxIcon className="h-5 w-5 text-white" />
               </ListItemPrefix>
-              <Link to="/mainquiz" className="text-gray-100">Quiz</Link>
+              <Link to="/mainquiz" className="text-gray-100" onClick={() => setIsOpen(false)}>Quiz</Link>
             </ListItem>
 
             <ListItem>
               <ListItemPrefix>
                 <ChatBubbleOvalLeftEllipsisIcon className="h-5 w-5 text-white" />
               </ListItemPrefix>
-              <Link to="/community" className="text-gray-100">Community</Link>
+              <Link to="/community" className="text-gray-100" onClick={() => setIsOpen(false)}>Community</Link>
+            </ListItem>
+            <ListItem>
+              <ListItemPrefix>
+                <FaBook className="h-5 w-5 text-white" />
+              </ListItemPrefix>
+              <Link to="/tutorials" className="text-gray-100" onClick={() => setIsOpen(false)}>Tutorials</Link>
             </ListItem>
 
             <ListItem>
               <ListItemPrefix>
                 <Cog6ToothIcon className="h-5 w-5 text-white" />
               </ListItemPrefix>
-              <Link to="/collection" className="text-gray-100">Simulators</Link>
+              <Link to="/collection" className="text-gray-100" onClick={() => setIsOpen(false)}>Simulators</Link>
             </ListItem>
             <ListItem>
               <ListItemPrefix>
                 <HiAcademicCap className="h-5 w-5 text-white" />
               </ListItemPrefix>
-              <Link to="/contest" className="text-gray-100">Contest</Link>
+              <Link to="/contest" className="text-gray-100" onClick={() => setIsOpen(false)}>Contest</Link>
             </ListItem>
 
             <ListItem>
               <ListItemPrefix>
                 <UserCircleIcon className="h-5 w-5 text-white" />
               </ListItemPrefix>
-              <Link to="/leaderboard" className="text-gray-100">Leaderboard</Link>
+              <Link to="/leaderboard" className="text-gray-100" onClick={() => setIsOpen(false)}>Leaderboard</Link>
             </ListItem>
 
-            <ListItem>
-              <ListItemPrefix>
-                <PowerIcon className="h-5 w-5 text-white" />
-              </ListItemPrefix>
-              <Link to="/logout" className="text-gray-100">Log Out</Link>
-            </ListItem>
           </List>
         </Card>
       </div>

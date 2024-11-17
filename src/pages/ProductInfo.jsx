@@ -3,7 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Title from '../components/Title';
 import { assets } from '../assets/assets';
-
+import ThanjavurBommainfo from '../assets/Thanjavur_Bomma_info.jpg';
+import ThanjavurBommaHistory from '../assets/ThanjavurBommaHistory.jpg';
 const productContents = {
   1: {
     title: "Tarkashi Wood Carving",
@@ -37,6 +38,57 @@ const productContents = {
     infoImage: assets.dhokra_info,
     historyImage: assets.dhokra_info2,
     route: '/selection'
+  },
+  5: {
+    title: "Thanjavur Bomma",
+    description: "The Thanjavur Bomma, also known for its unique \"rebounding\" or \"bouncing\" feature, is a type of traditional doll with a special design that allows it to return to an upright position when pushed. This remarkable characteristic is achieved through a carefully balanced, weighted base and a rounded, flexible structure. When the doll is tilted or knocked over, the weighted base causes it to rock back and forth before springing back to its original upright position. This playful mechanism not only adds an element of interaction but also showcases the ingenuity of the artisans who designed the Bomma. The rebounding feature makes it a captivating object, combining both art and entertainment, and is a defining characteristic that sets Thanjavur Bommas apart from other traditional wooden dolls.",
+    additionalContent: "The Thanjavur Bomma has its origins in the 16th-18th centuries during the Nayak and Maratha periods in Thanjavur, Tamil Nadu. Initially created for temple rituals and religious festivals, these dolls often depicted gods and mythological figures. The distinctive \"rebounding\" feature, where the doll returns to an upright position when pushed, was likely added to make them more interactive during religious displays. Over time, artisans enhanced the dolls with vibrant colors, gold leaf, and mirrors, transforming them into both spiritual symbols and intricate pieces of folk art. The tradition has been passed down through generations, remaining a cherished part of Tamil Nadu’s cultural heritage.",
+    infoImage: ThanjavurBommainfo,
+    historyImage: ThanjavurBommaHistory,
+    route: '/bomma'
+  },
+  6: {
+    title: "Stone Carvings",
+    description: "In ancient and medieval times sculpture was the favoured medium of artistic expression.  Indian buildings were profusely adorned with it.  The subject matter was  human forms that were used to instruct people in the truths of the Hindu, Buddhist, or Jain religions..",
+    additionalContent: "The tradition extends from Indus valley civilization of 2500 to 1800 BCE, during which terracotta figurines were produced. The great circular stone pillars and carved lions of the Mauryan period (3rd century BCE) gave way to figurative sculpture in the 2nd and 1st centuries.",
+    infoImage: assets.stoness_img, // Add relevant images to your assets
+    historyImage: assets.stonezz_img,
+    timeline: [
+      {
+        title: "Schools of Indian sculpture",
+        description: "There have been various schools according to the timeline in India's history which gave us sculpture in architecture and free sculptural forms as well. The schools include Sunga, Gandhara, Mathura, Pala, Chola, Pallava, Vijayanagara, Chalukya, Hoysala and Rashtrakuta. "
+      },
+
+      // Add more schools as needed
+    ],
+    route: '/stone'
+  },
+  7: {
+    title: "Swords in Ancient India",
+    description: "The history of swords in India dates back to the Bronze Age, when copper swords were used by the Indus Valley civilization. Swords have been found in archaeological sites throughout the Indian subcontinent, including in the Ganges-Jamuna Doab region, Fatehgarh, and Kallur.",
+    additionalContent: "Swords were essential in Indian warfare and martial arts. Different regions and empires developed unique sword styles, reflecting their culture and combat needs.",
+    infoImage: assets.sword1, // Add relevant images to your assets
+    historyImage: assets.sword2,
+    timeline: [
+      {
+        title: "Types of Swords in India",
+        description: "Over time, various sword types evolved in India, each with unique characteristics and uses in battle.",
+      },
+      {
+        title: "Khanda",
+        description: "A large, heavy, double-edged sword with a flaring tip, the Khanda originated in the Gupta Empire. It has significance in Hinduism, Buddhism, and Sikhism and is used in traditional Indian martial arts.",
+      },
+      {
+        title: "Talwar",
+        description: "The Talwar is a curved sword suited for mounted combat. Its design allowed warriors to strike more effectively while on horseback.",
+      },
+      {
+        title: "Shamsheer",
+        description: "Made from wootz steel, a type of crucible steel pioneered in India, the Shamsheer is known for its sharpness and resilience. It was also used in Central Asia and gained popularity for its fine craftsmanship.",
+      },
+      // Add more types or historical events as needed
+    ],
+    route: '/Indiswords'
   }
 };
 

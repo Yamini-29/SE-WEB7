@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Home'; // Your home page component
 import BestSeller from './components/BestSeller'; // BestSeller component
@@ -24,30 +24,47 @@ import Leaderboard from './pages/leaderboard'
 import DhokraSim from './Simulators/Dhokra/Modelviewer'
 import Contest from './pages/Contest';
 import ModelSelection from './Simulators/Dhokra/modelSelection';
+import Tutorials from './pages/Tutorials';
+import NewsFooter from './pages/NewsFooter';
+
+import Stone from './pages/Stone';
+import Indiswords from './pages/Indiswords';
+import ThanjavurBomma from './Simulators/ThanjavurBomma/ThanjavurBomma';
 
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    // Simulate preloader animation duration
+    const timer = setTimeout(() => {
+      setIsLoading(false); // Hide preloader after 4 seconds
+    }, 4000);
+
+    return () => clearTimeout(timer); // Cleanup timer on unmount
+  }, []);
+
+  if (isLoading) {
+    return <PreLoader />; // Show PreLoader until loading is complete
+  }
+
   return (
-<div>
-  <>
-  <PreLoader/>
-  <SidebarWithBurgerMenu/>
-  
-  <Routes>
+    <div>
+      <SidebarWithBurgerMenu />
+      <Routes>
         {/* Home Page */}
-        <Route path='/' element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
 
         {/* Other Pages */}
-        <Route path='/border' element={<Border />} />
-        <Route path='/3dsim' element={<Simulator />} />
-        <Route path='/simulation' element={<Simulations />} />
+        <Route path="/border" element={<Border />} />
+        <Route path="/3dsim" element={<Simulator />} />
+        <Route path="/simulation" element={<Simulations />} />
 
         {/* Quiz Page */}
-        <Route path='/quiz' element={<Quiz />} />
+        <Route path="/quiz" element={<Quiz />} />
         {/* Contest Page */}
-        <Route path='/contest' element={<Contest />} />
+        <Route path="/contest" element={<Contest />} />
         {/* Main Quiz Page (if it's separate from Quiz) */}
-        <Route path='/mainquiz' element={<MainQuiz />} />
+        <Route path="/mainquiz" element={<MainQuiz />} />
 
         {/* BestSeller Page */}
         <Route path='/bestseller' element={<BestSeller />} />
@@ -73,10 +90,13 @@ const App = () => {
         <Route path="/model1" element={<DhokraSimulator />} />
         <Route path="/model2" element={<DhokraSimulator2 />} />
         <Route path="/model3" element={<DhokraSimulator3 />} />
+     
+        <Route path='/bomma' element={<ThanjavurBomma/>}/>
+        {/* Tutorials Page */}
+        <Route path="/tutorials" element={<Tutorials />} />
+        <Route path="/stone" element={<Stone />} />
+        <Route path="/indiswords" element={<Indiswords />} />
       </Routes>
-
-
-      </>
     </div>
   );
 };

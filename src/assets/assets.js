@@ -29,7 +29,10 @@ import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
 
-
+import sword1 from './sword2.png'
+import sword2 from './swordss.jpg'
+import stoness_img from './stoness.jpg'
+import stonezz_img from './stonezz.jpg'
 export const assets = {
     
     
@@ -58,7 +61,12 @@ export const assets = {
     
     razorpay_logo,
     stripe_logo,
-    cross_icon
+    cross_icon,
+
+    sword1,
+    sword2,
+    stonezz_img,
+    stoness_img
 }
 
 export const products = [

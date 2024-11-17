@@ -16,6 +16,7 @@ const videos = [
     src: '/src/assets/taksh.mp4',
     thumbnail: '/src/assets/tarkashi.jpg',
   },
+
 ];
 
 const VideoGallery = () => {

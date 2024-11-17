@@ -15,7 +15,10 @@ const models = [
   { id: 1, title: "Tarkashi Wood Carving", image: "/src/assets/tarkashi.jpg", description: "A beautiful form of wood carving known as Tarkashi." },
   { id: 2, title: "Thanjavur Thattu", image: "/src/assets/tj_thattu.jpeg", description: "Traditional Thanjavur plates, known for their unique design." },
   { id: 3, title: "Kalamkari", image: "/src/assets/kalamkari_tut.jpg", description: "Hand-painted or block-printed art on textiles, known as Kalamkari." },
-  { id: 4, title: "Dhokra", image: "/src/assets/dhokra.jpg", description: "Ancient Dhokra art, a form of metal casting with intricate designs." }
+  { id: 4, title: "Dhokra", image: "/src/assets/dhokra.jpg", description: "Ancient Dhokra art, a form of metal casting with intricate designs." },
+  { id: 6, title: "Stone Carvings", image: "src/assets/thumnail.jpg",description: "Stone carved into beautiful figures"  },
+  { id: 7, title: "Swords", image: "src/assets/swordthumbnail.jpg",description:"Swords" },
+  { id: 5, title: "Thanjavur Bomma", image: "src/assets/thala.avif",description:"Bomma" }
 ];
 
 export default function BestSellerPage() {
@@ -27,7 +30,7 @@ export default function BestSellerPage() {
           Tutorials
         </h1>
         <Link
-          to="/all-tutorials"
+          to="/tutorials"
           className="text-blue-400 hover:underline text-sm flex items-center whitespace-nowrap"
         >
           View More <ArrowRightIcon className="ml-1 h-4 w-4" />
