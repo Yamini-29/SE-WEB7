@@ -116,3 +116,9 @@
 .message-input button:hover {
     background-color: #2563eb;
 }
+
+.message-container {
+    white-space: normal; 
+    word-wrap: break-word;
+  }
+  

@@ -1,18 +1,34 @@
+import React, { useEffect, useRef } from "react";
 
-import React from 'react';
-import Sidebar from './Sidebar';
-import ModelViewer from './ModelViewer';
+function VideoPlayer({ videoSrc, fact }) {
+  const videoRef = useRef(null);
 
-const DhokraSimulator = () => {
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  }, [videoSrc]);
+
   return (
-    <div className="flex h-screen bg-gray-900">
-      {/* Sidebar for draggable items */}
-      <Sidebar />
-
-      {/* Canvas with 3D scene */}
-      <ModelViewer />
+    <div className="flex flex-col justify-center items-center h-screen bg-black">
+      <video
+        ref={videoRef}
+        src={videoSrc}
+        loop
+        muted
+        className="max-w-full max-h-[70%] outline-none"
+      />
+      <div
+        className="mt-4 bg-white text-black p-4 rounded-lg shadow-lg transition-opacity duration-700"
+        style={{
+          opacity: fact ? 1 : 0,
+          transform: fact ? "translateY(0)" : "translateY(20px)",
+        }}
+      >
+        {fact}
+      </div>
     </div>
   );
-};
+}
 
-export default DhokraSimulator;
+export default VideoPlayer;

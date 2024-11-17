@@ -36,7 +36,7 @@ const productContents = {
     additionalContent: "There are two main processes of lost wax casting: solid casting and hollow casting. While the former is predominant in the south of India the latter is more common in Central and Eastern India. Solid casting does not use a clay core but instead a solid piece of wax to create the mould; hollow casting is the more traditional method and uses the clay core",
     infoImage: assets.dhokra_info,
     historyImage: assets.dhokra_info2,
-    route: '/dhokra'
+    route: '/selection'
   }
 };
 

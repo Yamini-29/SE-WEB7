@@ -15,12 +15,17 @@ import Thattu3DView from './Simulators/Thattu/Thattu3DView'
 import KalamkariSimulations from './Simulators/kalamkari/KalamkariSimulations'
 import Designs from './Simulators/kalamkari/Designs'
 import KalamkariSimulator from './Simulators/kalamkari/KalamkariSimulator'
-import DhokraSimulator from './Simulators/Dhokra/dhokra'
+import DhokraSimulator from './Simulators/Dhokra/dhokra1'
+import DhokraSimulator2 from './Simulators/Dhokra/dhokra2'
+import DhokraSimulator3 from './Simulators/Dhokra/dhokra3'
 import { SidebarWithBurgerMenu } from './components/Sidebar';
 import PreLoader from './components/PreLoader';
 import Leaderboard from './pages/leaderboard'
-import DhokraSim from './Simulators/Dhokra/dhokraSimulator'
+import DhokraSim from './Simulators/Dhokra/Modelviewer'
 import Contest from './pages/Contest';
+import ModelSelection from './Simulators/Dhokra/modelSelection';
+
+
 const App = () => {
   return (
 <div>
@@ -64,10 +69,12 @@ const App = () => {
         <Route path='/kalamsim' element={<KalamkariSimulator/>}/>
         <Route path='/leaderboard' element={<Leaderboard/>}/>
         <Route path='/dhokraSimulation' element={<DhokraSim/>} />
+        <Route path="/selection" element={<ModelSelection />} />
+        <Route path="/model1" element={<DhokraSimulator />} />
+        <Route path="/model2" element={<DhokraSimulator2 />} />
+        <Route path="/model3" element={<DhokraSimulator3 />} />
       </Routes>
-      <div className="overflow-hidden min-h-screen">
-      <BestSeller />
-</div>
+
 
       </>
     </div>
