@@ -55,6 +55,20 @@ export default function MainQuiz() {
           >
             Thanjavur Thattu
           </Link>
+          <Link
+            to="/quiz"
+            state={{ model: "Dhokra" }}
+            className="bg-blue-600 text-white py-4 px-10 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 transform transition duration-300 text-2xl"
+          >
+            Dhokra
+          </Link>
+          <Link
+            to="/quiz"
+            state={{ model: "ThanjavurBommai" }}
+            className="bg-blue-600 text-white py-4 px-10 rounded-full shadow-lg hover:bg-blue-500 hover:scale-105 transform transition duration-300 text-2xl"
+          >
+            Thanjavur Bommai
+          </Link>
         </motion.div>
       </div>
     </div>
