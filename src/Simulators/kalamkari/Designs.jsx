@@ -23,7 +23,6 @@ const borderImages = [
     { src: d8, alt: "Border 8" },
     { src: d9, alt: "Border 9" },
     { src: d10, alt: "Border 10" },
-    
 ];
 
 const Designs = () => {
@@ -31,6 +30,7 @@ const Designs = () => {
     const navigate = useNavigate();
     const { droppedImage } = location.state || {};
     const [selectedBorders, setSelectedBorders] = useState([]);
+    const [uploadedImage, setUploadedImage] = useState(null);
 
     const handleImageClick = (src) => {
         setSelectedBorders((prev) => {
@@ -42,6 +42,21 @@ const Designs = () => {
         });
     };
 
+    const handleImageUpload = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setUploadedImage(reader.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
+    const handleRemoveUploadedImage = () => {
+        setUploadedImage(null);
+    };
+
     const saveImage = () => {
         const element = document.getElementById("capture");
         html2canvas(element).then((canvas) => {
@@ -51,6 +66,7 @@ const Designs = () => {
             link.click();
         });
     };
+
     return (
         <div className="Desktop2" style={{ width: "100%", height: "100vh", position: "relative", background: "white", fontFamily: "Inter", padding: "20px", display: "flex" }}>
             <div style={{ flex: "1", maxHeight: "600px", marginRight: "20px", background: "#D9D9D9", borderRadius: "10px", padding: "20px", boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)", overflowY: "auto" }}>
@@ -74,14 +90,113 @@ const Designs = () => {
                         />
                     ))}
                 </div>
+
+                <div style={{ marginTop: "20px", width: "100%" }}>
+                    {/* Add Your Design Box or Image Preview */}
+                    {uploadedImage ? (
+                        <div style={{
+                            width: "100%",
+                            height: "100px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            position: "relative",
+                            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+                            borderRadius: "5px"
+                        }}>
+                            <img src={uploadedImage} alt="Uploaded Design" style={{
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "contain",
+                                borderRadius: "5px"
+                            }} />
+                            <button
+                                onClick={handleRemoveUploadedImage}
+                                style={{
+                                    position: "absolute",
+                                    top: "10px",
+                                    right: "10px",
+                                    padding: "5px 10px",
+                                    backgroundColor: "#FF0000",
+                                    color: "white",
+                                    border: "none",
+                                    borderRadius: "5px",
+                                    cursor: "pointer",
+                                    fontSize: "14px",
+                                }}
+                            >
+                                Remove
+                            </button>
+                        </div>
+                    ) : (
+                        <div
+                            style={{
+                                width: "100%",
+                                height: "100px",
+                                border: "2px dashed #4CAF50",
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                borderRadius: "5px",
+                                cursor: "pointer",
+                                margin: "10px 0",
+                                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+                            }}
+                            onClick={() => document.getElementById("file-input").click()}
+                        >
+                            <input
+                                id="file-input"
+                                type="file"
+                                accept="image/*"
+                                onChange={handleImageUpload}
+                                style={{ display: "none" }}
+                            />
+                            <span style={{ fontSize: "24px", color: "#4CAF50" }}>+</span>
+                            <span style={{ marginLeft: "10px", fontSize: "18px", color: "#4CAF50" }}>Add Your Design</span>
+                        </div>
+                    )}
+                </div>
             </div>
 
             <div
                 id="capture"
-                style={{ flex: "3", height: "600px", background: "#D9D9D9", borderRadius: "10px", boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}
+                style={{
+                    flex: "3",
+                    height: "600px",
+                    background: "#D9D9D9",
+                    borderRadius: "10px",
+                    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+                    position: "relative",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    overflow: "hidden"
+                }}
             >
                 {droppedImage && (
-                    <div style={{ width: "100%", height: "100%", background: `url(${droppedImage}) center/cover`, borderRadius: "10px", position: "absolute", top: 0, left: 0, zIndex: 1 }} />
+                    <div style={{
+                        width: "100%",
+                        height: "100%",
+                        background: `url(${droppedImage}) center/cover`,
+                        borderRadius: "10px",
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        zIndex: 1
+                    }} />
+                )}
+
+                {uploadedImage && (
+                    <div style={{
+                        width: "100%",
+                        height: "100%",
+                        background: `url(${uploadedImage}) center/cover`,
+                        borderRadius: "10px",
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        zIndex: 1
+                    }} />
                 )}
 
                 {selectedBorders.map((borderSrc, index) => (

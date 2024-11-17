@@ -84,7 +84,6 @@ const Simulations = () => {
                         onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
                         onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
                     />
-                    {/* Uncomment the following if you want to use image3 */}
                     {/* <img
                         style={{
                             width: "80%",

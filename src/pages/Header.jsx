@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { assets } from "../assets/assets";
 
 const links = [
-  { name: 'CREATE UR OWN', href: '#' },
-  { name: '3D MODELS', href: '#' },
-  { name: 'TUTORIALS', href: '#' },
-  { name: 'CONTESTS', href: '#' },
+  { name: 'CREATE UR OWN', href: '/collection' },
+  { name: 'SEE TUTORIALS', href: '/tutorials' },
+  { name: 'ATTEND QUIZZES ', href: '/mainquiz' },
+  { name: 'TRY CONTESTS', href: '/contest' },
 ];
 
 const stats = [
