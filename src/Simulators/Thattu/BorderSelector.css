@@ -51,3 +51,40 @@
   font-weight: bold;
   margin-bottom: 30px; 
 }
+
+.design-options {
+  display: flex;
+  flex-wrap: wrap; /* Allow designs to wrap if they don't fit in one line */
+  gap: 15px; /* Space between design items */
+  margin-top: 20px; /* Add space above the design section */
+}
+
+.design-option {
+  width: 100px; /* Set a fixed width for each design image */
+  height: auto; /* Maintain aspect ratio */
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.design-option:hover {
+  border: 2px solid #4a90e2; /* Highlight on hover */
+}
+
+.border-option, .design-option {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.border-option:hover, .design-option:hover {
+  border: 2px solid #4a90e2; /* Highlight on hover */
+}
+
+.border-options, .design-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Spacing between items */
+}
