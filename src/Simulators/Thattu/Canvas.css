@@ -1,113 +1,225 @@
-/* Adjusting styles for improved appearance */
-
+/* Canvas Container Styling */
 .canvas-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 20px;
-  width: calc(100% - 320px); /* Reduced width to accommodate sidebar */
-  margin-left: 320px; /* Shifted to make space for the sidebar */
-  height: 100vh; /* Ensure the canvas container takes full height */
-  padding-top: 40px; /* Added padding to increase the gap between text and the circle */
+  margin-left: 320px;
+  width: calc(100% - 320px);
+  height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  background-color: #f9f9f9; /* Light background for better contrast */
 }
 
-.h2 {
-  color: white;
-  font-size: 28px;
-  font-family: 'Arial', sans-serif;
+/* Canvas Header Styling */
+.canvas-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+/* Reset Button Styling */
+.reset-button {
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  gap: 5px;
+  padding: 8px 16px; /* Compact padding */
+  font-size: 14px;
   font-weight: bold;
-  margin-bottom: 30px; /* Increased margin between text and canvas */
+  background-color: #ff4d4d; /* Bright red color */
+  color: white;
+  border: none;
+  border-radius: 50px; /* Rounded corners for pill shape */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
+.reset-button:hover {
+  background-color: #e63939; /* Darker red on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.reset-button svg {
+  width: 18px; /* Smaller icon size */
+  height: 18px;
+}
+
+.reset-button span {
+  font-size: 14px; /* Text size adjustment */
+}
+
+/* Content Wrapper Styling */
+.content-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Canvas Styling */
 .canvas {
+  position: relative; /* Allows proper layering of child elements */
   width: 600px;
   height: 600px;
   border: 7px solid #000000;
   border-radius: 50%;
   background-color: #000000f2;
-  position: relative;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow for better UI */
+  overflow: hidden; /* Ensures images don't overflow outside the canvas */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4); /* Enhanced shadow for better depth */
 }
 
+/* Border Image Styling */
 .canvas-border {
-  width: 100%;
-  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-}
-
-/* Sidebar style adjustments */
-.sidebar {
-  width: 320px; /* Increased the width of the sidebar */
-  height: 100vh; /* Full height to fit the window */
-  padding: 20px;
-  background-color: #2C2C2C; /* Darker background for sidebar */
-  overflow-y: auto; /* Make it scrollable if content overflows */
-  position: fixed;
-  left: 0;
-  top: 0;
-  box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.3); /* Added shadow for sidebar */
-}
-
-.sidebar img {
   width: 100%;
-  margin-bottom: 20px; /* Add some space between the images */
+  height: 100%;
+  object-fit: contain;
+  z-index: 1; /* Layered below the design */
 }
 
-.button-group {
+/* Design Container Styling */
+.design-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%; /* Adjust size relative to the border */
+  height: 40%;
   display: flex;
-  gap: 20px; /* Increased gap between buttons */
+  align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  z-index: 2; /* Layered above the border */
+  border-radius: 50%; /* Optional: Ensures circular cropping of design */
+  overflow: hidden; /* Prevents design from exceeding container bounds */
 }
 
-/* Button styles for "Save Image" */
-.save-button {
-  padding: 15px 30px;
-  background-color: #f1c40f; /* Yellow before hover */
-  color: white;
-  border: none;
+/* Design Image Styling */
+.canvas-design {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures proper scaling */
+}
+
+/* Drag Over Styling */
+.drag-over {
+  border-color: #4a90e2;
+  background-color: rgba(74, 144, 226, 0.1); /* Subtle highlight during drag */
+}
+
+/* Scale Control Styling */
+.scale-control {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center; /* Center the control */
+}
+
+.scale-control label {
+  font-size: 16px; /* Slightly larger for readability */
+  font-weight: bold;
+  color: #555; /* Darker gray for better contrast */
+}
+
+.scale-control input[type="range"] {
+  -webkit-appearance: none;
+  width: 250px; /* Increased width for better usability */
+  height: 8px; /* Slightly taller for easier interaction */
+  background: linear-gradient(to right, #4a90e2, #ddd); /* Gradient for a polished look */
+  outline: none;
+  border-radius: 10px; /* Rounded edges for a smoother style */
+  overflow: hidden;
   cursor: pointer;
-  border-radius: 8px;
-  font-size: 18px;
-  font-family: 'Arial', sans-serif;
-  transition: 0.3s;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.scale-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px; /* Larger thumb for easier dragging */
+  height: 20px;
+  background: #4a90e2;
+  border: 2px solid #fff; /* Add a white border for visibility */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.scale-control input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2); /* Enlarge slightly on hover */
+}
+
+/* Button Group Styling */
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.save-button,
+.view-3d-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.save-button {
+  background-color: #4caf50;
+  color: #fff;
 }
 
 .save-button:hover {
-  background-color: #2ecc71; /* Green after hover */
+  background-color: #45a049;
 }
 
-/* Button styles for "View in 3D" (can keep it different or same) */
 .view-3d-button {
-  padding: 15px 30px;
-  background-color: #3498db; /* Blue for "View in 3D" */
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 8px;
-  font-size: 18px;
-  font-family: 'Arial', sans-serif;
-  transition: 0.3s;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: #ffc107;
+  color: #fff;
 }
 
 .view-3d-button:hover {
-  background-color: #2980b9; /* Darker blue on hover */
+  background-color: #e0a800;
 }
 
-/* Additional improvements */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #1A1A1A; /* Darker background to match the sidebar */
-  color: white;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .canvas-container {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .canvas {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .scale-control input[type="range"] {
+    width: 200px;
+  }
+}
+
+.canvas-title {
+  font-size: 40px; /* Larger font size for better visibility */
+  font-weight: bold;
+  color: #333; /* Dark gray for a clean look */
+  margin-bottom: 10px; /* Add spacing below the title */
+  text-align: center; /* Center-align the title */
+  font-family: 'Arial', sans-serif; /* Use a modern, clean font */
 }
