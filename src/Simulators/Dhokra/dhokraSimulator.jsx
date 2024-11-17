@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Sidebar from './Sidebar';
-import ModelViewer from './ModelViewer';
+import ModelViewer from './Modelviewer';
 
 const DhokraSimulator = () => {
   return (
