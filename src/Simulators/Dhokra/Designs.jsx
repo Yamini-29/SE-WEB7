@@ -9,7 +9,7 @@ function Sidebar({ onSelectVideo }) {
   ];
 
   return (
-    <div className="bg-blue-100 h-screen w-1/4 flex flex-col gap-4 p-4">
+    <div className="bg-blue-100 h-screen w-1/4 flex flex-col gap-6 p-5 pt-20">
       {buttons.map((button) => (
         <button
           key={button.id}

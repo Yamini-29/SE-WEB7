@@ -1,21 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { assets } from "../assets/assets";
 
 const links = [
-  { name: 'CREATE UR OWN', href: '/collection' },
-  { name: 'SEE TUTORIALS', href: '/tutorials' },
-  { name: 'ATTEND QUIZZES ', href: '/mainquiz' },
-  { name: 'TRY CONTESTS', href: '/contest' },
+  { name: "CREATE UR OWN", path: "/collection" },
+  { name: "SEE TUTORIALS", path: "/tutorials" },
+  { name: "ATTEND QUIZZES ", path: "/mainquiz" },
+  { name: "TRY CONTESTS", path: "/contest" },
 ];
 
 const stats = [
-  { name: 'STATES', value: 28 },
-  { name: 'UNION TERRITORIES', value: 8 },
-  { name: 'ART FORMS', value: 50 },
-  { name: 'ARTISANS', value: 7 }, // We'll treat "7m+" as 7 for counting
+  { name: "STATES", value: 28 },
+  { name: "UNION TERRITORIES", value: 8 },
+  { name: "ART FORMS", value: 50 },
+  { name: "ARTISANS", value: 7 }, // We'll treat "7m+" as 7 for counting
 ];
 
 export default function Example() {
+  const navigate = useNavigate(); // Initialize useNavigate
   const [currentStats, setCurrentStats] = useState([0, 0, 0, 0]);
 
   useEffect(() => {
@@ -59,7 +61,7 @@ export default function Example() {
         <div
           style={{
             clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
           }}
           className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
         />
@@ -74,9 +76,13 @@ export default function Example() {
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base/7 font-semibold text-white sm:grid-cols-2 md:flex lg:gap-x-10">
             {links.map((link) => (
-              <a key={link.name} href={link.href}>
+              <button
+                key={link.name}
+                onClick={() => navigate(link.path)} // Navigate programmatically
+                className="hover:text-gray-300 focus:outline-none"
+              >
                 {link.name} <span aria-hidden="true">&rarr;</span>
-              </a>
+              </button>
             ))}
           </div>
           <dl className="py-12 mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
