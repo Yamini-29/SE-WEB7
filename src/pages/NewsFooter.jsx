@@ -20,7 +20,7 @@ export default function CulturalFooter() {
             setIsSlidingOut(false); // Reset animation state
             setIsVerified(false); // Show input form again
           }, 500); // Duration to match CSS transition for fade-out
-        }, 5000);
+        }, 2000);
       }, 500); // Match duration with CSS animation
     } else {
       alert("Please enter a valid email address.");
