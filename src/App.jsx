@@ -27,7 +27,19 @@ import Indiswords from './pages/Indiswords';
 import Contest from './pages/Contest';
 
 const App = () => {
-  
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    // Simulate preloader animation duration
+    const timer = setTimeout(() => {
+      setIsLoading(false); // Hide preloader after 4 seconds
+    }, 4000);
+
+    return () => clearTimeout(timer); // Cleanup timer on unmount
+  }, []);
+
+  if (isLoading) {
+    return <PreLoader />; // Show PreLoader until loading is complete
+  }
 
   return (
     <div>
