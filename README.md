@@ -12,3 +12,13 @@ Currently, two official plugins are available:
 - npm install react-dnd-html5-backend
 - npm install html2canvas
 - npm install three
+- npm install @react-spring/web
+- npm install gsap
+- npm install --save react-spinners
+- npm install three @react-three/fiber @react-three/drei
+- npm install @react-three/fiber @react-three/drei react-dnd react-dnd-html5-backend
+- npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
+- npm install swiper
+- npm install animate.css
+- npm install date-fns
+- npm install lucide-react
