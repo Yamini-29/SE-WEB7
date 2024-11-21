@@ -9,7 +9,7 @@ const PreLoader = () => {
   return (
     <div className="preloader">
       <div className="texts-container">
-        <span> Cultural , </span>
+        <span> Culture , </span>
         <span> Heritage , </span>
         <span> Preserve.</span>
       </div>

@@ -6,9 +6,9 @@ import { useNavigate } from "react-router-dom";
 
 // Placeholder data for contests
 const contests = [
-  { id: 1, name: "Kalamkari", description: "Dive into the world of Kalamkari art and compete in exciting challenges." },
-  { id: 2, name: "Tarkashi", description: "Show your craftsmanship in Tarkashi with our interactive contest." },
-  { id: 3, name: "Thanjavur Thattu", description: "Unleash your creativity in the Thanjavur Thattu art competition." },
+  { id: 3, name: "Kalamkari", description: "Dive into the world of Kalamkari art and compete in exciting challenges." },
+  { id: 1, name: "Tarkashi", description: "Show your craftsmanship in Tarkashi with our interactive contest." },
+  { id: 2, name: "Thanjavur Thattu", description: "Unleash your creativity in the Thanjavur Thattu art competition." },
 ];
 
 const Contest = () => {

@@ -2,15 +2,23 @@ import { useState } from 'react';
 
 const videos = [
   {
+    title: 'Thanjavur Bommai',
+    src: '/src/assets/ThanjavurBommaTutorial.mp4',
+    thumbnail: '/src/assets/thala.avif',
+  },
+  {
     title: 'Kalamkari',
     src: '/src/assets/kalamkari.mp4',
     thumbnail: '/src/assets/kalamkari_tut.jpg',
   },
+
   {
-    title: 'Thanjavur Thattu',
-    src: '/src/assets/thattu.mp4',
-    thumbnail: '/src/assets/tj_thattu.jpeg',
+    title: 'Dhokra',
+    src: '/src/assets/dhokraVideo.mp4',
+    thumbnail: '/src/assets/dhokra_info_2.jpg',
   },
+
+
   {
     title: 'Tarkashi',
     src: '/src/assets/taksh.mp4',
@@ -21,22 +29,18 @@ const videos = [
     src: '/src/assets/StoneCarvingTutorial.mp4',
     thumbnail: '/src/assets/stoness.jpg',
   },
-  {
-    title: 'Dhokra',
-    src: '/src/assets/dhokraVideo.mp4',
-    thumbnail: '/src/assets/dhokra_info_2.jpg',
-  },
+
   {
     title: 'Swords',
     src: '/src/assets/IndianSword.mp4',
     thumbnail: '/src/assets/swordss.jpg',
   },
+
   {
-    title: 'Thanjavur Bommai',
-    src: '/src/assets/ThanjavurBommaTutorial.mp4',
-    thumbnail: '/src/assets/thala.avif',
+    title: 'Thanjavur Thattu',
+    src: '/src/assets/thattu.mp4',
+    thumbnail: '/src/assets/tj_thattu.jpeg',
   },
-  
   
 ];
 
